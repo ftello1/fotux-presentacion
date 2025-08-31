@@ -54,3 +54,116 @@
     }
     .resultado {
       background-color: #222;
+      padding: 20px;
+      margin-top: 20px;
+      border: 1px solid #ffc107;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://i.imgur.com/3zvQe1u.png" alt="Logo Fotux" class="logo">
+  <h1>FOTUX Light & Electrical</h1>
+  <p>Soluciones LED de Alto Rendimiento para Industria, Minería y Construcción</p>
+</header>
+
+<section>
+  <h2>Presentación Institucional</h2>
+  <p>Somos una empresa chilena especializada en iluminación industrial de alta eficiencia. Nuestro compromiso con la excelencia técnica, el cumplimiento normativo y la atención personalizada nos posiciona como aliados estratégicos en proyectos exigentes.</p>
+  <p>Ofrecemos luminarias con hasta <strong>210 lm/W</strong>, certificación IP66 / IK10, y cumplimiento con la <strong>norma DS1</strong>. Nuestra tecnología permite reducir costos operativos, mejorar la seguridad y optimizar el retorno de inversión.</p>
+  <p>Esta presentación incluye una calculadora lumínica interactiva, imágenes reales de nuestros productos y entornos de aplicación, y una tabla comparativa para facilitar la toma de decisiones técnicas.</p>
+</section>
+
+<section>
+  <h2>Productos Fotux</h2>
+  <img src="https://i.imgur.com/9XzKZ1F.jpg" alt="Campana UFO Fotux" class="imagen-industrial">
+  <p><strong>Campana UFO HB GL</strong> – 100W / 150W / 200W – 210 lm/W – Ideal para galpones y plantas industriales.</p>
+
+  <img src="https://i.imgur.com/3qzYkqP.jpg" alt="Proyector Fotux" class="imagen-industrial">
+  <p><strong>Proyector GL Ámbar</strong> – 150W / 200W – 150 lm/W – Para patios de carga y faenas mineras.</p>
+
+  <img src="https://i.imgur.com/7gYvLrP.jpg" alt="Luminaria Pública Fotux" class="imagen-industrial">
+  <p><strong>Luminaria Pública GL AP</strong> – 120W / 150W / 200W – 140–150 lm/W – Para calles y accesos industriales.</p>
+</section>
+
+<section>
+  <h2>Aplicaciones Reales</h2>
+  <img src="https://i.imgur.com/4vZkT9Q.jpg" alt="Faena minera" class="imagen-industrial">
+  <img src="https://i.imgur.com/2vYkP3N.jpg" alt="Planta industrial" class="imagen-industrial">
+  <img src="https://i.imgur.com/8rTjF5M.jpg" alt="Técnico Fotux" class="imagen-industrial">
+</section>
+
+<section>
+  <h2>Calculadora Lumínica</h2>
+  <label>Largo del recinto (m): <input type="number" id="largo"></label><br>
+  <label>Ancho del recinto (m): <input type="number" id="ancho"></label><br>
+  <label>Altura del recinto (m): <input type="number" id="altura"></label><br>
+  <label>Lux requerido: <input type="number" id="lux"></label><br>
+  <label>Tipo de luminaria:
+    <select id="tipo">
+      <option value="ufo">Campana UFO 210 lm/W</option>
+      <option value="publica">Luminaria Pública 150 lm/W</option>
+      <option value="proyector">Proyector de Área 150 lm/W</option>
+      <option value="led">LED estándar 100 lm/W</option>
+      <option value="tradicional">Tecnología tradicional 70 lm/W</option>
+    </select>
+  </label><br>
+  <label>Potencia del equipo (W): <input type="number" id="potencia"></label><br>
+  <button onclick="calcular()">Calcular</button>
+
+  <div class="resultado" id="resultado"></div>
+
+  <script>
+    function calcular() {
+      const largo = parseFloat(document.getElementById('largo').value);
+      const ancho = parseFloat(document.getElementById('ancho').value);
+      const altura = parseFloat(document.getElementById('altura').value);
+      const area = largo * ancho;
+      const lux = parseFloat(document.getElementById('lux').value);
+      const tipo = document.getElementById('tipo').value;
+      const potencia = parseFloat(document.getElementById('potencia').value);
+
+      const eficiencias = {
+        ufo: 210,
+        publica: 150,
+        proyector: 150,
+        led: 100,
+        tradicional: 70
+      };
+
+      const lm_por_equipo = potencia * eficiencias[tipo];
+      const coef_mantenimiento = 0.8;
+      const factor_utilizacion = 0.7;
+
+      const cantidad = Math.ceil((lux * area) / (lm_por_equipo * coef_mantenimiento * factor_utilizacion));
+
+      document.getElementById('resultado').innerHTML = `
+        <h3>Resultado:</h3>
+        <p>Área total: <strong>${area.toFixed(2)} m²</strong></p>
+        <p>Altura del recinto: <strong>${altura} m</strong></p>
+        <p>Necesita aproximadamente <strong>${cantidad}</strong> luminarias de tipo seleccionado.</p>
+      `;
+    }
+  </script>
+</section>
+
+<section>
+  <h2>Distribución Lumínica – Plano útil a 0,8 m</h2>
+  <img src="https://i.imgur.com/6rXjK1M.png" alt="Distribución lumínica Fotux" class="imagen-industrial">
+</section>
+
+<section>
+  <h2>Resumen Técnico</h2>
+  <table>
+    <tr>
+      <th>Modelo</th><th>Potencia (W)</th><th>Eficiencia (lm/W)</th><th>Aplicación</th><th>Protección</th>
+    </tr>
+    <tr>
+      <td>Campana UFO HB GL</td><td>100 / 150 / 200</td><td>210</td><td>Galpones, plantas</td><td>IP66 / IK10</td>
+    </tr>
+    <tr>
+      <td>Proyector GL Ámbar</td><td>150 / 200</td><td>150</td><td>Faenas mineras</td><td>IP66 / IK10</td>
+    </tr>
+    <tr>
+      <td>Luminaria Pública GL AP</td><td>120 / 150 / 200</td><
