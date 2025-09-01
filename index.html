@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Fotux Chile – Presentación Institucional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,8 +15,19 @@
     header {
       background-color: #ffc107;
       color: #111;
-      padding: 20px;
-      text-align: center;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+    header img.logo {
+      max-width: 120px;
+      height: auto;
+    }
+    header .header-text {
+      display: flex;
+      flex-direction: column;
     }
     section {
       padding: 40px;
@@ -23,9 +35,7 @@
     }
     h1, h2 {
       color: #ffc107;
-    }
-    .logo {
-      max-width: 200px;
+      margin-top: 0;
     }
     .imagen-industrial {
       width: 100%;
@@ -64,8 +74,10 @@
 
 <header>
   <img src="img/logo-fotux.png" alt="Logo Fotux" class="logo">
-  <h1>FOTUX Light & Electrical</h1>
-  <p>Soluciones LED de Alto Rendimiento para Industria, Minería y Construcción</p>
+  <div class="header-text">
+    <h1>FOTUX Light & Electrical</h1>
+    <p>Soluciones LED de Alto Rendimiento para Industria, Minería y Construcción</p>
+  </div>
 </header>
 
 <section>
@@ -162,7 +174,4 @@
       <td>Campana UFO HB GL</td><td>100 / 150 / 200</td><td>210</td><td>Galpones, plantas</td><td>IP66 / IK10</td>
     </tr>
     <tr>
-      <td>Proyector GL Ámbar</td><td>150 / 200</td><td>150</td><td>Faenas mineras</td><td>IP66 / IK10</td>
-    </tr>
-    <tr>
-      <td>Luminaria Pública GL AP</td><td>120 / 150 / 200</td><td>105</td><td>Vialidad, accesos</td><td>IP
+      <td>Proyector GL Ámbar</td><td>150 / 200</td><td>150</td><td>
