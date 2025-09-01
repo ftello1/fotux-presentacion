@@ -25,6 +25,10 @@ p{margin:8px 0 0}
 .grid-form{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));background:#0e0e0e;padding:16px;border:1px solid var(--brand);border-radius:8px}
 label{font-weight:600;font-size:13px}
 input,select{width:100%;padding:8px;background:#181818;color:var(--fg);border:1px solid #444;border-radius:6px}
+.result{margin-top:12px;padding:12px;background:#151515;border:1px solid #444;border-radius:8px}
+.kpi{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.kpi div{background:#1a1a1a;padding:10px 12px;border:1px solid #333;border-radius:6px;min-width:220px}
+canvas{width:100%;max-width:100%;background:#0a0a0a;border:1px dashed #555;border-radius:8px}
 .contacto{background:#222;padding:24px;border:1px solid var(--brand);border-radius:8px}
 .contacto a{color:var(--brand);text-decoration:none}
 </style>
@@ -42,7 +46,7 @@ input,select{width:100%;padding:8px;background:#181818;color:var(--fg);border:1p
 <section id="hero" class="hero has-bg" style="background-image:url('img/HIGH_BAY_HB_GL-210lmFOTUX-1.webp')">
   <div class="wrap">
     <h2>Iluminación Fotux: Potencia, precisión y cumplimiento</h2>
-    <p>En <strong>FOTUX Light & Electrical</strong> diseñamos luminarias LED con eficiencias de hasta <strong>210 lm/W</strong>, las más eficientes de Chile, con certificaciones <strong>IP66 / IK10</strong> y cumplimiento de la <strong>Norma DS1</strong>.</p>
+    <p>En <strong>FOTUX Light & Electrical</strong> diseñamos luminarias LED con eficiencias de hasta <strong>210 lm/W</strong>, certificaciones <strong>IP66 / IK10</strong> y cumplimiento de la <strong>Norma DS1</strong>.</p>
   </div>
 </section>
 
@@ -64,6 +68,29 @@ input,select{width:100%;padding:8px;background:#181818;color:var(--fg);border:1p
   </div>
 </section>
 
+<section id="calculadora">
+  <h2>Calculadora lumínica y retorno de inversión</h2>
+  <div class="grid-form">
+    <div><label>Flujo por luminaria (lm)</label><input type="number" id="flujo" value="42000"></div>
+    <div><label>Potencia por luminaria (W)</label><input type="number" id="potencia" value="200"></div>
+    <div><label>Cantidad de luminarias</label><input type="number" id="cantidad" value="12"></div>
+    <div><label>Largo (m)</label><input type="number" id="largo" value="30"></div>
+    <div><label>Ancho (m)</label><input type="number" id="ancho" value="20"></div>
+    <div><label>Altura montaje (m)</label><input type="number" id="altura" value="8"></div>
+    <div><label>Horas de uso al mes</label><input type="number" id="horas" value="360"></div>
+    <div><label>Potencia actual (W)</label><input type="number" id="potenciaActual" value="400"></div>
+  </div>
+  <div class="result" id="salida">
+    <div class="kpi">
+      <div><strong>Iluminancia media estimada:</strong> <span id="luxProm">—</span> lux</div>
+      <div><strong>Ahorro energético anual:</strong> $ <span id="ahorroAnual">—</span></div>
+      <div><strong>Ahorro total anual:</strong> $ <span id="ahorroTotal">—</span></div>
+      <div><strong>Payback estimado:</strong> <span id="payback">—</span> meses</div>
+    </div>
+  </div>
+  <canvas id="plano" height="260"></canvas>
+</section>
+
 <section id="contacto">
   <h2>Contacto</h2>
   <div class="contacto">
@@ -71,10 +98,4 @@ input,select{width:100%;padding:8px;background:#181818;color:var(--fg);border:1p
     <p><strong>Correo:</strong> <a href="mailto:coloca-tu-email@fotux.cl">coloca-tu-email@fotux.cl</a></p>
     <p><strong>Teléfono:</strong> <a href="tel:+569XXXXXXXX">+56 9 XXXXXXXX</a></p>
     <div class="cta">
-      <a class="btn" href="https://ftello1.github.io/fotux-presentacion/" target="_blank">📂 Abrir presentación Fotux Chile</a>
-    </div>
-  </div>
-</section>
-
-</body>
-</html>
+      <a class="btn" href="https://ftello1.github.io/fotux-present
