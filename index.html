@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +12,20 @@
     header .header-text { display: flex; flex-direction: column; }
     section { padding: 40px; border-bottom: 1px solid #333; }
     h1, h2 { color: #ffc107; margin-top: 0; }
-    .imagen-industrial { width: 100%; max-width: 600px; margin-top: 20px; border: 2px solid #ffc107; }
+    .productos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .producto {
+      text-align: center;
+    }
+    .producto img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #ffc107;
+    }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
     th, td { border: 1px solid #555; padding: 10px; text-align: left; }
     th { background-color: #222; }
@@ -33,66 +47,65 @@
 
 <section>
   <h2>Presentación Institucional</h2>
-  <!-- Aquí pega tu carta de presentación completa -->
-  <p>Somos una empresa chilena especializada en iluminación industrial de alta eficiencia. Nuestro compromiso con la excelencia técnica, el cumplimiento normativo y la atención personalizada nos posiciona como aliados estratégicos en proyectos exigentes.</p>
-  <p>Ofrecemos luminarias con hasta <strong>210 lm/W</strong>, certificación IP66 / IK10, y cumplimiento con la <strong>norma DS1</strong>. Nuestra tecnología permite reducir costos operativos, mejorar la seguridad y optimizar el retorno de inversión.</p>
+  <p>Somos una empresa chilena especializada en iluminación industrial de alta eficiencia...</p>
 </section>
 
 <section>
   <h2>Productos Fotux</h2>
-
-  <img src="img/HIGH_BAY_HB_GL-210lmFOTUX-1.webp?v=2" alt="Campana UFO HB GL" class="imagen-industrial">
-  <p><strong>Campana UFO HB GL</strong> – 100W / 150W / 200W – 210 lm/W – IP66 / IK10 – Flicker Free – THD &lt;10% – CRI 70 – Supresor 10Kv – Dimmable 1–10V – Garantía real: 7 años</p>
-
-  <img src="img/PROYECTOR_DE_AREA-170lm_GLITE_GL_FT.webp?v=2" alt="Proyector GL Ámbar" class="imagen-industrial">
-  <p><strong>Proyector GL Ámbar</strong> – 150W / 200W – 150 lm/W – IP66 / IK10 – 1700°K / 2200°K – Ángulo Tipo IV – Flicker Free – THD &lt;8% – CRI 70 – Supresor 10Kv – Dimmable – Sensor PIR opcional – Garantía real: 7 años</p>
-
-  <img src="img/ALUMBRADO_PUBLICO-TOTONICAPAN_FOTUX.JPG?v=2" alt="Luminaria Pública Totonicapán" class="imagen-industrial">
-  <p><strong>Luminaria Pública Totonicapán</strong> – 120W / 150W / 200W – <strong>105 lm/W</strong> – Aplicaciones: viales, industria, exterior – IP66 / IK10 – 1700°K – Clase II – Ángulo Tipo II – Flicker Free – THD &lt;8% – CRI 70 – Supresor 10Kv – Sensor PIR opcional – Dimmable 1–10V – Zigbee opcional – Garantía real: 7 años</p>
-</section>
-
-<section>
-  <h2>Resumen Técnico</h2>
-  <table>
-    <tr>
-      <th>Modelo</th><th>Potencia (W)</th><th>Eficiencia (lm/W)</th><th>Aplicación</th><th>Protección</th>
-    </tr>
-    <tr>
-      <td>Campana UFO HB GL</td><td>100 / 150 / 200</td><td>210</td><td>Galpones, plantas</td><td>IP66 / IK10</td>
-    </tr>
-    <tr>
-      <td>Proyector GL Ámbar</td><td>150 / 200</td><td>150</td><td>Faenas mineras</td><td>IP66 / IK10</td>
-    </tr>
-    <tr>
-      <td>Luminaria Pública Totonicapán</td><td>120 / 150 / 200</td><td>105</td><td>Viales, industria, exterior</td><td>IP66 / IK10</td>
-    </tr>
-  </table>
+  <div class="productos-grid">
+    <div class="producto">
+      <img src="img/HIGH_BAY_HB_GL-210lmFOTUX-1.webp?v=2" alt="Campana UFO HB GL">
+      <p><strong>Campana UFO HB GL</strong> – 100W / 150W / 200W – 210 lm/W – IP66 / IK10...</p>
+    </div>
+    <div class="producto">
+      <img src="img/PROYECTOR_DE_AREA-170lm_GLITE_GL_FT.webp?v=2" alt="Proyector GL Ámbar">
+      <p><strong>Proyector GL Ámbar</strong> – 150W / 200W – 150 lm/W – IP66 / IK10...</p>
+    </div>
+    <div class="producto">
+      <img src="img/ALUMBRADO_PUBLICO-TOTONICAPAN_FOTUX.JPG?v=2" alt="Luminaria Pública Totonicapán">
+      <p><strong>Luminaria Pública Totonicapán</strong> – 120W / 150W / 200W – 105 lm/W – IP66 / IK10...</p>
+    </div>
+  </div>
 </section>
 
 <section id="calculadora-luminica">
   <h2>Calculadora Lumínica</h2>
-  <p>Completa los datos para estimar el número de luminarias necesarias y su distribución óptima.</p>
-  
-  <img src="img/EQUIPO_SECTORES_DE_ALTA_TEMPERATURA.webp?v=2" alt="Distribución de luminarias" class="imagen-industrial">
-
+  <p>Completa los datos para estimar el número de luminarias necesarias y su consumo total.</p>
   <form oninput="{
-    let area = parseFloat(document.getElementById('area').value) || 0;
-    let lux = parseFloat(document.getElementById('lux').value) || 0;
-    let eficiencia = parseFloat(document.getElementById('eficiencia').value) || 1;
-    let factorMantenimiento = parseFloat(document.getElementById('factor').value) || 1;
-    let lumenTotal = (area * lux) / factorMantenimiento;
-    let potenciaTotal = lumenTotal / eficiencia;
-    document.getElementById('resultado').value = lumenTotal.toFixed(0) + ' lm (' + potenciaTotal.toFixed(1) + ' W)';
+    let area = parseFloat(areaInput.value) || 0;
+    let lux = parseFloat(luxInput.value) || 0;
+    let flujo = parseFloat(flujoInput.value) || 1;
+    let potencia = parseFloat(potenciaInput.value) || 1;
+    let factor = parseFloat(factorInput.value) || 1;
+    let lumenTotal = (area * lux) / factor;
+    let cantidad = lumenTotal / flujo;
+    let consumoTotal = cantidad * potencia;
+    resultado.value = cantidad.toFixed(1) + ' luminarias (' + consumoTotal.toFixed(1) + ' W totales)';
   }">
-    <label for="area">Área a iluminar (m²):</label>
-    <input type="number" id="area" value="100" min="1" required>
+    <label>Área a iluminar (m²):</label>
+    <input type="number" id="areaInput" value="100" min="1" required>
+    <label>Nivel de iluminación requerido (lux):</label>
+    <input type="number" id="luxInput" value="300" min="1" required>
+    <label>Flujo luminoso por luminaria (lm):</label>
+    <input type="number" id="flujoInput" value="42000" min="1" required>
+    <label>Potencia por luminaria (W):</label>
+    <input type="number" id="potenciaInput" value="200" min="1" required>
+    <label>Factor de mantenimiento (0.1 a 1.0):</label>
+    <input type="number" id="factorInput" value="0.8" step="0.01" min="0.1" max="1" required>
+    <output id="resultado">0 luminarias (0 W totales)</output>
+  </form>
+</section>
 
-    <label for="lux">Nivel de iluminación requerido (lux):</label>
-    <input type="number" id="lux" value="300" min="1" required>
+<section class="contacto">
+  <h2>Contacto</h2>
+  <p><strong>Fernando Claudio Tello Cabello</strong><br>
+  Key Account Manager – Fotux Chile<br>
+  📱 +56 9 6695 9221<br>
+  📧 ftello@fotux.cl<br>
+  🌐 www.fotux.cl</p>
+</section>
 
-    <label for="eficiencia">Eficiencia de luminaria (lm/W):</label>
-    <input type="number" id="eficiencia" value="210" min="1" required>
-
-    <label for="factor">
+</body>
+</html>
 
 
