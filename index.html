@@ -1,115 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Fotux Chile – Presentación Institucional</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #111; color: #f0f0f0; margin: 0; }
-    header { background-color: #ffc107; color: #111; padding: 10px 20px; display: flex; align-items: center; gap: 20px; }
-    header img.logo { max-width: 120px; height: auto; }
-    header .header-text { display: flex; flex-direction: column; }
-    section { padding: 40px; border-bottom: 1px solid #333; }
-    h1, h2 { color: #ffc107; margin-top: 0; }
-    .imagen-industrial { width: 100%; max-width: 600px; margin-top: 20px; border: 2px solid #ffc107; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { border: 1px solid #555; padding: 10px; text-align: left; }
-    th { background-color: #222; }
-    .contacto { background-color: #222; padding: 20px; margin-top: 20px; border: 1px solid #ffc107; }
-    form label { display: block; margin-top: 10px; }
-    form input { width: 100%; max-width: 300px; padding: 8px; margin-top: 5px; }
-    output { display: block; margin-top: 15px; font-size: 1.2em; color: #ffc107; }
-  </style>
+<meta charset="UTF-8">
+<title>Fotux Chile – Presentación Institucional</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#111; --fg:#f0f0f0; --brand:#ffc107; --muted:#222; --line:#333;
+}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0}
+header{background:var(--brand);color:#111;display:flex;align-items:center;gap:20px;padding:10px 20px}
+header img.logo{max-width:120px;height:auto}
+section{padding:40px 20px;border-bottom:1px solid var(--line);max-width:1400px;margin:auto}
+h1,h2{color:var(--brand);margin-top:0}
+.catalogo{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.producto{flex:1 1 30%;min-width:280px;background:var(--muted);padding:15px;border-radius:8px;text-align:center}
+.producto img{width:100%;border:2px solid var(--brand);border-radius:6px}
+.producto p{font-size:14px;line-height:1.4}
+table{width:100%;border-collapse:collapse;margin-top:20px}
+th,td{border:1px solid #555;padding:10px;text-align:left}
+th{background:#1c1c1c}
+.contacto{background:#222;padding:20px;margin-top:20px;border:1px solid var(--brand);border-radius:8px}
+.grid-form{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));background:#0e0e0e;padding:16px;border:1px solid var(--brand);border-radius:8px}
+label{font-weight:600;font-size:13px}
+input,select{width:100%;padding:8px;background:#181818;color:var(--fg);border:1px solid #444;border-radius:6px}
+.row-span{grid-column:1/-1}
+.result{margin-top:12px;padding:12px;background:#151515;border:1px solid #444;border-radius:8px}
+.kpi{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.kpi div{background:#1a1a1a;padding:10px 12px;border:1px solid #333;border-radius:6px;min-width:140px}
+canvas{width:100%;max-width:100%;background:#0a0a0a;border:1px dashed #555;border-radius:8px}
+</style>
 </head>
 <body>
 
 <header>
-  <img src="img/logo_fotux_120px.webp?v=5" alt="Logo Fotux" class="logo">
-  <div class="header-text">
+  <img src="img/logo_fotux_120px.webp?v=6" alt="Logo Fotux" class="logo">
+  <div>
     <h1>FOTUX Light & Electrical</h1>
     <p>Soluciones LED de Alto Rendimiento para Industria, Minería y Construcción</p>
   </div>
 </header>
 
-<section>
-  <h2>Presentación Institucional</h2>
-  <p>Somos una empresa chilena especializada en iluminación industrial de alta eficiencia. Nuestro compromiso con la excelencia técnica, el cumplimiento normativo y la atención personalizada nos posiciona como aliados estratégicos en proyectos exigentes.</p>
-  <p>Ofrecemos luminarias con hasta <strong>210 lm/W</strong>, certificación IP66 / IK10, y cumplimiento con la <strong>norma DS1</strong>. Nuestra tecnología permite reducir costos operativos, mejorar la seguridad y optimizar el retorno de inversión.</p>
+<section style="background:url('img/fondo-industrial.jpg') center/cover no-repeat; color:#fff; text-shadow:1px 1px 4px rgba(0,0,0,0.8);">
+  <div style="background:rgba(0,0,0,0.55);padding:30px;border-radius:10px;">
+    <h2>Iluminación Fotux: Potencia, Precisión y Resistencia</h2>
+    <p>En <strong>FOTUX Light & Electrical</strong> diseñamos y fabricamos luminarias LED de alto rendimiento para minería, industria y logística, con eficiencias de hasta <strong>210 lm/W</strong> y certificaciones <strong>IP66 / IK10</strong> que garantizan resistencia extrema al polvo, agua e impactos.</p>
+    <p>Nuestras soluciones cumplen con la <strong>Norma DS1</strong> y estándares internacionales, reducen el consumo energético hasta un <strong>80%</strong>, mejoran la seguridad operativa y optimizan el retorno de inversión. Incorporamos supresores de sobretensión, control DALI/1-10V, sensores inteligentes y opciones de conectividad para gestión remota.</p>
+    <p>Con Fotux, cada proyecto recibe un diseño lumínico preciso, respaldado por garantía real de 7 años y un servicio técnico que entiende las exigencias del terreno.</p>
+  </div>
 </section>
 
 <section>
-  <h2>Productos Fotux</h2>
-
-  <img src="img/HIGH_BAY_HB_GL-210lmFOTUX-1.webp?v=5" alt="Campana UFO HB GL" class="imagen-industrial">
-  <p><strong>Campana UFO HB GL</strong> – 100W / 150W / 200W – 210 lm/W – IP66 / IK10 – Flicker Free – THD &lt;10% – CRI 70 – Supresor 10Kv – Dimmable 1–10V – Garantía real: 7 años</p>
-
-  <img src="img/PROYECTOR_DE_AREA-170lm_GLITE_GL_FT.webp?v=5" alt="Proyector GL Ámbar" class="imagen-industrial">
-  <p><strong>Proyector GL Ámbar</strong> – 150W / 200W – 150 lm/W – IP66 / IK10 – 1700°K / 2200°K – Ángulo Tipo IV – Flicker Free – THD &lt;8% – CRI 70 – Supresor 10Kv – Dimmable – Sensor PIR opcional – Garantía real: 7 años</p>
-
-  <!-- Nombre exacto corregido -->
-  <img src="img/ALUMBRADO_PUBLICO-TOTONICAPAN_FOTUX.JPG?v=5" alt="Luminaria Pública Totonicapán" class="imagen-industrial">
-  <p><strong>Luminaria Pública Totonicapán</strong> – 120W / 150W / 200W – <strong>105 lm/W</strong> – Aplicaciones: viales, industria, exterior – IP66 / IK10 – 1700°K – Clase II – Ángulo Tipo II – Flicker Free – THD &lt;8% – CRI 70 – Supresor 10Kv – Sensor PIR opcional – Dimmable 1–10V – Zigbee opcional – Garantía real: 7 años</p>
+  <h2>Catálogo Destacado</h2>
+  <div class="catalogo">
+    <div class="producto">
+      <img src="img/HIGH_BAY_HB_GL-210lmFOTUX-1.webp?v=6" alt="Campana UFO HB GL">
+      <p><strong>Campana UFO HB GL</strong><br>100W / 150W / 200W – 210 lm/W – IP66 / IK10 – Flicker Free – Dimmable</p>
+    </div>
+    <div class="producto">
+      <img src="img/PROYECTOR_DE_AREA-170lm_GLITE_GL_FT.webp?v=6" alt="Proyector GL Ámbar">
+      <p><strong>Proyector GL Ámbar</strong><br>150W / 200W – 150 lm/W – IP66 / IK10 – 1700K / 2200K – Tipo IV</p>
+    </div>
+    <div class="producto">
+      <img src="img/ALUMBRADO_PUBLICO-TOTONICAPAN_FOTUX.JPG?v=6" alt="Luminaria Pública Totonicapán">
+      <p><strong>Luminaria Pública Totonicapán</strong><br>120W / 150W / 200W – 105 lm/W – IP66 / IK10 – Tipo II</p>
+    </div>
+  </div>
 </section>
 
 <section>
-  <h2>Resumen Técnico</h2>
-  <table>
-    <tr>
-      <th>Modelo</th><th>Potencia (W)</th><th>Eficiencia (lm/W)</th><th>Aplicación</th><th>Protección</th>
-    </tr>
-    <tr>
-      <td>Campana UFO HB GL</td><td>100 / 150 / 200</td><td>210</td><td>Galpones, plantas</td><td>IP66 / IK10</td>
-    </tr>
-    <tr>
-      <td>Proyector GL Ámbar</td><td>150 / 200</td><td>150</td><td>Faenas mineras</td><td>IP66 / IK10</td>
-    </tr>
-    <tr>
-      <td>Luminaria Pública Totonicapán</td><td>120 / 150 / 200</td><td>105</td><td>Viales, industria, exterior</td><td>IP66 / IK10</td>
-    </tr>
-  </table>
-</section>
+  <h2>Calculadora Lumínica Avanzada</h2>
+  <div class="grid-form">
+    <div>
+      <label>Selecciona luminaria Fotux</label>
+      <select id="preset">
+        <option value="hb">Campana UFO HB GL</option>
+        <option value="tipoIV">Proyector GL Ámbar</option>
+        <option value="tipoII">Luminaria Pública Totonicapán</option>
+      </select>
+    </div>
+    <div><label>Flujo (lm)</label><input type="number" id="flujo" value="42000"></div>
+    <div><label>Potencia (W)</label><input type="number" id="potencia" value="200"></div>
+    <div><label>Largo (m)</label><input type="number" id="largo" value="30"></div>
+    <div><label>Ancho (m)</label><input type="number" id="ancho" value="20"></div>
+    <div><label>Altura (m)</label><input type="number" id="altura" value="8"></div>
+    <div><label>Lux objetivo</label><input type="number" id="lux" value="300"></div>
+    <div><label>MF</label><input type="number" id="mf" value="0.8" step="0.01"></div>
+    <div><label>UF</label><input type="number" id="uf" value="0.6" step="0.01"></div>
+    <div><label>Horas/día</label><input type="number" id="hpd" value="12"></div>
+    <div><label>Días/año</label><input type="number" id="dpa" value="300"></div>
+    <div class="row-span result">
+      <strong>Resultado:</strong>
+      <div class="kpi">
+        <div><strong>Cantidad:</strong> <span id="kpiN">0</span></div>
+        <div><strong>Disposición:</strong> <span id="kpiDisp">0 × 0</span></div>
+        <div><strong>Lux estimados:</strong> <span id="kpiLux">0</span></div>
+        <div><strong>Potencia total:</strong> <span id="kpiPtot">0</span> W</div>
 
-<section id="calculadora-luminica">
-  <h2>Calculadora Lumínica</h2>
-  <p>Completa los datos para estimar el número de luminarias necesarias y su distribución óptima.</p>
-  
-  <img src="img/EQUIPO_SECTORES_DE_ALTA_TEMPERATURA.webp?v=5" alt="Distribución de luminarias" class="imagen-industrial">
-
-  <form oninput="{
-    let area = parseFloat(document.getElementById('area').value) || 0;
-    let lux = parseFloat(document.getElementById('lux').value) || 0;
-    let eficiencia = parseFloat(document.getElementById('eficiencia').value) || 1;
-    let factorMantenimiento = parseFloat(document.getElementById('factor').value) || 1;
-    let lumenTotal = (area * lux) / factorMantenimiento;
-    let potenciaTotal = lumenTotal / eficiencia;
-    document.getElementById('resultado').value = lumenTotal.toFixed(0) + ' lm (' + potenciaTotal.toFixed(1) + ' W)';
-  }">
-    <label for="area">Área a iluminar (m²):</label>
-    <input type="number" id="area" value="100" min="1" required>
-
-    <label for="lux">Nivel de iluminación requerido (lux):</label>
-    <input type="number" id="lux" value="300" min="1" required>
-
-    <label for="eficiencia">Eficiencia de luminaria (lm/W):</label>
-    <input type="number" id="eficiencia" value="210" min="1" required>
-
-    <label for="factor">Factor de mantenimiento (0.1 a 1.0):</label>
-    <input type="number" id="factor" value="0.8" step="0.01" min="0.1" max="1" required>
-
-    <output id="resultado">0 lm (0 W)</output>
-  </form>
-</section>
-
-<section class="contacto">
-  <h2>Contacto</h2>
-  <p><strong>Fernando Claudio Tello Cabello</strong><br>
-  Key Account Manager – Fotux Chile<br>
-  📱 +56 9 6695 9221<br>
-  📧 ftello@fotux.cl<br>
-  🌐 www.fotux.cl</p>
-</section>
-
-</body>
-</html>
 
 
