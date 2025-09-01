@@ -42,14 +42,14 @@ canvas{width:100%;max-width:100%;background:#0a0a0a;border:1px dashed #555;borde
 <body>
 
 <header>
-  <img id="logo" class="logo" src="" alt="Logo Fotux">
+  <img id="logo" class="logo" src="img/logo_fotux.png" alt="Logo Fotux">
   <div>
     <h1>FOTUX Light & Electrical</h1>
     <p>Soluciones LED de Alto Rendimiento para Industria, Minería y Construcción</p>
   </div>
 </header>
 
-<section id="hero" class="hero">
+<section id="hero" class="hero has-bg" style="background-image:url('img/fondo-industrial.jpg')">
   <div class="wrap">
     <h2>Iluminación Fotux: Potencia, precisión y cumplimiento</h2>
     <p>En <strong>FOTUX Light & Electrical</strong> diseñamos luminarias LED con eficiencias de hasta <strong>210 lm/W</strong>, las más eficientes de Chile, con certificaciones <strong>IP66 / IK10</strong> y cumplimiento de la <strong>Norma DS1</strong> vigente de contaminación lumínica, evitando multas y asegurando proyectos sostenibles.</p>
@@ -58,37 +58,3 @@ canvas{width:100%;max-width:100%;background:#0a0a0a;border:1px dashed #555;borde
 </section>
 
 <section id="catalogo">
-  <h2>Luminarias Fotux</h2>
-  <div class="catalogo">
-    <div class="producto">
-      <div class="imgbox"><img id="img-ufo" src="" alt="Campana Industrial Fotux"></div>
-      <p><strong>Campana Industrial</strong><br>100/150/200 W – hasta 210 lm/W – IP66/IK10 – Flicker Free – Dimmable</p>
-    </div>
-    <div class="producto">
-      <div class="imgbox"><img id="img-proyector" src="" alt="Proyector Área Tipo IV Fotux"></div>
-      <p><strong>Proyector Área Tipo IV</strong><br>150/200 W – 150 lm/W – IP66/IK10 – 1700K/2200K – Supresor 10 kV</p>
-    </div>
-    <div class="producto">
-      <div class="imgbox"><img id="img-publica" src="" alt="Luminaria Pública 1700°K GL AP-FOTUX"></div>
-      <p><strong>Luminaria Pública</strong><br>120/150/200 W – 105 lm/W – IP66/IK10 – Tipo II – DS1</p>
-    </div>
-  </div>
-</section>
-
-<section id="calculadora">
-  <h2>Calculadora lumínica y retorno de inversión</h2>
-  <div class="grid-form">
-    <!-- Campos principales -->
-    <div><label>Selecciona luminaria Fotux</label>
-      <select id="preset">
-        <option value="hb">Campana Industrial</option>
-        <option value="tipoIV">Proyector Área Tipo IV</option>
-        <option value="tipoII">Luminaria Pública</option>
-        <option value="custom">Personalizado</option>
-      </select>
-    </div>
-    <div><label>Flujo por luminaria (lm)</label><input type="number" id="flujo" value="42000"></div>
-    <div><label>Potencia por luminaria (W)</label><input type="number" id="potencia" value="200"></div>
-    <div><label>Largo (m)</label><input type="number" id="largo" value="30"></div>
-    <div><label>Ancho (m)</label><input type="number" id="ancho" value="20"></div>
-    <div><label>Altura montaje (m)</label><input type="number" id="altura" value="8"></div
