@@ -1,9 +1,76 @@
-<section>
-  <h2>Calculadora lumínica y retorno de inversión</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Fotux Chile – Presentación Empresa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--bg:#111;--fg:#f0f0f0;--brand:#ffc107;--muted:#1a1a1a;--line:#333;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0}
+header{background:var(--brand);color:#111;display:flex;align-items:center;gap:20px;padding:10px 20px}
+header img.logo{max-width:140px;height:auto}
+h1,h2{color:var(--brand);margin:0 0 12px}
+section{padding:40px 20px;border-bottom:1px solid var(--line);max-width:1400px;margin:0 auto}
+p{margin:8px 0 0}
+.hero{background:url('img/fondo-industrial.jpg') center/cover no-repeat;color:#fff;text-shadow:1px 1px 4px rgba(0,0,0,0.85);padding:0}
+.hero .wrap{background:rgba(0,0,0,0.55);padding:32px 24px;border-radius:10px;margin:40px 20px}
+.catalogo{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.producto{background:var(--muted);padding:16px;border-radius:8px;border:1px solid var(--brand);text-align:center}
+.producto img{width:100%;height:auto;border:2px solid var(--brand);border-radius:6px;display:block}
+.producto p{font-size:14px;line-height:1.45}
+.grid-form{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));background:#0e0e0e;padding:16px;border:1px solid var(--brand);border-radius:8px}
+label{font-weight:600;font-size:13px}
+input,select{width:100%;padding:8px;background:#181818;color:var(--fg);border:1px solid #444;border-radius:6px}
+.result{margin-top:12px;padding:12px;background:#151515;border:1px solid #444;border-radius:8px}
+.kpi{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.kpi div{background:#1a1a1a;padding:10px 12px;border:1px solid #333;border-radius:6px;min-width:160px}
+canvas{width:100%;max-width:100%;background:#0a0a0a;border:1px dashed #555;border-radius:8px}
+.contacto{background:#222;padding:24px;border:1px solid var(--brand);border-radius:8px}
+.contacto a{color:var(--brand);text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="img/logo_fotux_1x02xwebp.png" alt="Logo Fotux" class="logo">
+  <div>
+    <h1>FOTUX Light & Electrical</h1>
+    <p>Soluciones LED de Alto Rendimiento para Industria, Minería y Construcción</p>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h2>Iluminación Fotux: Potencia, Precisión y Cumplimiento</h2>
+    <p>En <strong>FOTUX Light & Electrical</strong> diseñamos luminarias LED de hasta <strong>210 lm/W</strong>, las más eficientes de Chile, con certificaciones <strong>IP66 / IK10</strong> y cumplimiento de la <strong>Norma DS1</strong> de contaminación lumínica vigente, evitando multas y asegurando proyectos sostenibles.</p>
+    <p>Asesoramos en grandes proyectos industriales y mineros, entregando diseño lumínico preciso, ahorro energético comprobable y soporte técnico especializado.</p>
+  </div>
+</section>
+
+<section id="catalogo">
+  <h2>Luminarias Fotux</h2>
+  <div class="catalogo">
+    <div class="producto">
+      <img src="img/luminaria1.jpg" alt="Luminaria 1 Fotux">
+      <p><strong>Campana Industrial</strong><br>100/150/200 W – 210 lm/W – IP66/IK10 – Flicker Free – Dimmable</p>
+    </div>
+    <div class="producto">
+      <img src="img/luminaria2.jpg" alt="Luminaria 2 Fotux">
+      <p><strong>Proyector Área Tipo IV</strong><br>150/200 W – 150 lm/W – IP66/IK10 – 1700K/2200K – Supresor 10 kV</p>
+    </div>
+    <div class="producto">
+      <img src="img/luminaria3.jpg" alt="Luminaria 3 Fotux">
+      <p><strong>Vial Tipo II</strong><br>120/150/200 W – 105 lm/W – IP66/IK10 – Norma DS1</p>
+    </div>
+  </div>
+</section>
+
+<section id="calculadora">
+  <h2>Calculadora Lumínica y Retorno de Inversión</h2>
   <div class="grid-form">
     <div><label>Selecciona luminaria Fotux</label>
       <select id="preset">
-        <option value="hb">Campana Industrial (interior)</option>
+        <option value="hb">Campana Industrial</option>
         <option value="tipoIV">Proyector Área Tipo IV</option>
         <option value="tipoII">Vial Tipo II</option>
         <option value="custom">Personalizado</option>
@@ -15,8 +82,8 @@
     <div><label>Ancho (m)</label><input type="number" id="ancho" value="20"></div>
     <div><label>Altura montaje (m)</label><input type="number" id="altura" value="8"></div>
     <div><label>Lux objetivo</label><input type="number" id="lux" value="300"></div>
-    <div><label>MF</label><input type="number" id="mf" value="0.8" step="0.01"></div>
-    <div><label>UF</label><input type="number" id="uf" value="0.6" step="0.01"></div>
+    <div><label>MF – Factor de Mantenimiento</label><input type="number" id="mf" value="0.8" step="0.01"></div>
+    <div><label>UF – Factor de Utilización</label><input type="number" id="uf" value="0.6" step="0.01"></div>
     <div><label>Horas/día</label><input type="number" id="hpd" value="12"></div>
     <div><label>Días/año</label><input type="number" id="dpa" value="300"></div>
     <div><label>Valor kWh ($)</label><input type="number" id="kwh" value="120"></div>
@@ -29,95 +96,4 @@
         <div><strong>Cantidad:</strong> <span id="kpiN">0</span></div>
         <div><strong>Disposición:</strong> <span id="kpiDisp">0 × 0</span></div>
         <div><strong>Lux estimados:</strong> <span id="kpiLux">0</span> lx</div>
-        <div><strong>Potencia total:</strong> <span id="kpiPtot">0</span> W</div>
-        <div><strong>Consumo anual:</strong> <span id="kpiEnergia">0</span> kWh</div>
-        <div><strong>Costo anual:</strong> $<span id="kpiCosto">0</span></div>
-        <div><strong>Ahorro anual:</strong> $<span id="kpiAhorro">0</span></div>
-        <div><strong>Payback:</strong> <span id="kpiPayback">0</span> años</div>
-        <div><strong>Espaciamiento:</strong> <span id="kpiEsp">Sx 0 m, Sy 0 m</span></div>
-      </div>
-    </div>
-
-    <div style="grid-column:1/-1">
-      <label>Plano (top view) — distribución propuesta</label>
-      <canvas id="plano" width="1000" height="640"></canvas>
-    </div>
-  </div>
-</section>
-
-<script>
-(function(){
-  const $=id=>document.getElementById(id);
-  const preset=$('preset'), flujo=$('flujo'), potencia=$('potencia'),
-        largo=$('largo'), ancho=$('ancho'), altura=$('altura'),
-        lux=$('lux'), mf=$('mf'), uf=$('uf'),
-        hpd=$('hpd'), dpa=$('dpa'), kwh=$('kwh'),
-        costoLum=$('costoLum'), potenciaAnt=$('potenciaAnt');
-
-  const kpiN=$('kpiN'), kpiDisp=$('kpiDisp'), kpiLux=$('kpiLux'),
-        kpiPtot=$('kpiPtot'), kpiEnergia=$('kpiEnergia'),
-        kpiCosto=$('kpiCosto'), kpiAhorro=$('kpiAhorro'),
-        kpiPayback=$('kpiPayback'), kpiEsp=$('kpiEsp');
-  const canvas=$('plano'), ctx=canvas.getContext('2d');
-
-  function applyPreset(){
-    const p=preset.value;
-    if(p==='hb'){ flujo.value=42000; potencia.value=200; uf.value=0.65; }
-    if(p==='tipoIV'){ flujo.value=30000; potencia.value=200; uf.value=0.45; }
-    if(p==='tipoII'){ flujo.value=18000; potencia.value=150; uf.value=0.40; }
-  }
-
-  function spacing(H,tipo){
-    if(tipo==='hb'||tipo==='HB') return {sx:1.3*H, sy:1.3*H};
-    if(tipo==='tipoII'||tipo==='TII') return {sx:3.6*H, sy:1.1*H};
-    return {sx:2.6*H, sy:1.6*H}; // tipoIV
-  }
-
-  function gridFor(N,L,W){
-    const r=L/W; let ny=Math.ceil(Math.sqrt(N/r)); let nx=Math.ceil(N/ny); return {nx,ny};
-  }
-
-  function update(){
-    const L=+largo.value, W=+ancho.value, H=+altura.value;
-    const E=+lux.value, MF=+mf.value, UF=+uf.value;
-    const F=+flujo.value, P=+potencia.value;
-    const horas=+hpd.value, dias=+dpa.value, kwhVal=+kwh.value;
-    const costo=+costoLum.value, Pant=+potenciaAnt.value;
-
-    const area=L*W;
-    const N=Math.max(1, Math.ceil((E*area)/(F*UF*MF)));
-    const {nx,ny}=gridFor(N,L,W);
-    const Nreal=nx*ny;
-
-    const Eest=(Nreal*F*UF*MF)/area;
-    const Ptot=Nreal*P;
-    const kWhAnual=(Ptot/1000)*horas*dias;
-    const costoAnual=kWhAnual*kwhVal;
-    const kWhAnt=(Nreal*Pant/1000)*horas*dias;
-    const ahorroAnual=(kWhAnt - kWhAnual)*kwhVal;
-    const inversion=Nreal*costo;
-    const pb=(ahorroAnual>0)?(inversion/ahorroAnual):Infinity;
-
-    kpiN.textContent=Nreal;
-    kpiDisp.textContent=`${nx} × ${ny}`;
-    kpiLux.textContent=Eest.toFixed(0);
-    kpiPtot.textContent=Ptot.toFixed(0);
-    kpiEnergia.textContent=kWhAnual.toFixed(0);
-    kpiCosto.textContent=costoAnual.toFixed(0);
-    kpiAhorro.textContent=ahorroAnual.toFixed(0);
-    kpiPayback.textContent=(pb===Infinity)?'∞':pb.toFixed(1);
-    const {sx,sy}=spacing(H,preset.value);
-    const Sx=(nx>1)?(L/nx):sx, Sy=(ny>1)?(W/ny):sy;
-    kpiEsp.textContent=`Sx ${Sx.toFixed(2)} m, Sy ${Sy.toFixed(2)} m`;
-
-    drawPlan(L,W,nx,ny);
-  }
-
-  function drawPlan(L,W,nx,ny){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    if(L<=0||W<=0) return;
-    const margin=24, maxW=canvas.width-2*margin, scale=maxW/L;
-    const targetH=Math.round(W*scale+2*margin);
-    if(canvas.height!==targetH){ canvas.height=Math.min(900,Math.max(320,targetH)); }
-
-    // Área
+        <div><strong
