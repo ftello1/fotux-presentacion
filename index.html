@@ -2,20 +2,24 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Fotux Chile – Presentación Empresa</title>
+<title>Fotux Chile – Carta de Presentación</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-:root{--bg:#111;--fg:#f0f0f0;--brand:#ffc107;--muted:#1a1a1a;--line:#333;}
+:root{--bg:#111;--fg:#f5f5f5;--brand:#ffc107;--muted:#1a1a1a;--line:#333;}
 *{box-sizing:border-box}
-body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0}
-header{background:var(--brand);color:#111;display:flex;align-items:center;gap:20px;padding:12px 20px}
-header img.logo{max-width:140px;height:auto;object-fit:contain}
-h1,h2{color:var(--brand);margin:0 0 12px}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0;line-height:1.45}
+a{color:var(--brand);text-decoration:none}
+header{background:var(--brand);color:#111;display:flex;align-items:center;gap:20px;padding:16px 20px;border-bottom:3px solid #000}
+header img.logo{max-width:160px;height:auto;object-fit:contain;display:block}
+h1,h2{margin:0 0 10px}
+h1{color:#111}
+h2.section{color:var(--brand)}
 section{padding:40px 20px;border-bottom:1px solid var(--line);max-width:1400px;margin:0 auto}
 p{margin:8px 0 0}
-.hero{background:#0d0d0d;color:#fff;text-shadow:1px 1px 4px rgba(0,0,0,0.85);padding:0;min-height:360px}
-.hero.has-bg{background-position:center;background-size:cover;background-repeat:no-repeat}
-.hero .wrap{background:rgba(0,0,0,0.55);padding:40px 28px;border-radius:10px;margin:42px 20px}
+.hero{position:relative;min-height:360px;padding:0;background:#0d0d0d;color:#fff;text-shadow:1px 1px 3px rgba(0,0,0,.7)}
+.hero::before{content:"";position:absolute;inset:0;background-image:url('img/HIGH_BAY_HB_GL-210lmFOTUX-1.webp');background-size:cover;background-position:center;opacity:.15;filter:grayscale(100%) contrast(120%)}
+.hero .wrap{position:relative;padding:40px 28px;margin:40px 20px;border:1px solid var(--brand);border-radius:10px;background:rgba(0,0,0,.55)}
+.hero h2{color:var(--brand);margin-bottom:10px}
 .catalogo{display:grid;gap:20px;grid-template-columns:repeat(3,minmax(280px,1fr))}
 @media (max-width:980px){.catalogo{grid-template-columns:repeat(2,minmax(260px,1fr))}}
 @media (max-width:640px){.catalogo{grid-template-columns:1fr}}
@@ -25,73 +29,60 @@ p{margin:8px 0 0}
 .grid-form{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));background:#0e0e0e;padding:16px;border:1px solid var(--brand);border-radius:8px}
 label{font-weight:600;font-size:13px}
 input,select{width:100%;padding:8px;background:#181818;color:var(--fg);border:1px solid #444;border-radius:6px}
-fieldset{border:1px solid #444;border-radius:8px;padding:10px}
-legend{padding:0 6px;color:#ccc;font-size:12px}
-.tip{color:#bbb;font-size:12px;margin-top:4px}
 .result{margin-top:12px;padding:12px;background:#151515;border:1px solid #444;border-radius:8px}
 .kpi{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
 .kpi div{background:#1a1a1a;padding:10px 12px;border:1px solid #333;border-radius:6px;min-width:220px}
 canvas{width:100%;max-width:100%;background:#0a0a0a;border:1px dashed #555;border-radius:8px}
 .contacto{background:#222;padding:24px;border:1px solid var(--brand);border-radius:8px}
-.contacto a{color:var(--brand);text-decoration:none}
+.contacto a{color:var(--brand)}
+.cta{margin-top:18px;text-align:center}
+.cta a.btn{background:var(--brand);color:#111;padding:10px 18px;border-radius:6px;font-weight:700;display:inline-block}
+.footer{color:#bbb;font-size:12px;text-align:center;padding:18px}
 </style>
 </head>
 <body>
 
 <header>
-  <img id="logo" class="logo" src="img/logo-fotux.png
-img/HIGH_BAY_HB_GL-210lmFOTUX-1.webp
-img/PROYECTOR_DE_AREA-170lm_GLITE_GL_FT.webp
-ALUMBRADO_PUBLICO_TIPOX_GLAP-FOTUX.jpg   ← en la raíz del repo
-" alt="Logo Fotux">
+  <img id="logo" class="logo" src="img/logo-fotux.png" alt="Logo Fotux">
   <div>
     <h1>FOTUX Light & Electrical</h1>
-    <p>Soluciones LED de Alto Rendimiento para Industria, Minería y Construcción</p>
+    <p>Soluciones LED de alto rendimiento para industria, minería e infraestructura pública</p>
   </div>
 </header>
 
-<section id="hero" class="hero has-bg" style="background-image:url('img/HIGH_BAY_HB_GL-210lmFOTUX-1.webp')">
+<section class="hero">
   <div class="wrap">
-    <h2>Iluminación Fotux: Potencia, precisión y cumplimiento</h2>
-    <p>En <strong>FOTUX Light & Electrical</strong> diseñamos luminarias LED con eficiencias de hasta <strong>210 lm/W</strong>, las más eficientes de Chile, con certificaciones <strong>IP66 / IK10</strong> y cumplimiento de la <strong>Norma DS1</strong> vigente de contaminación lumínica, evitando multas y asegurando proyectos sostenibles.</p>
-    <p>Especialistas en proyectos industriales y mineros: diseño lumínico preciso, ahorro energético medible y soporte técnico experto.</p>
+    <h2>Carta de presentación</h2>
+    <p>En <strong>Fotux</strong> diseñamos y suministramos luminarias LED de alta eficiencia para aplicaciones industriales, mineras y de infraestructura pública. Combinamos desempeño fotométrico, eficiencia energética y cumplimiento normativo.</p>
+    <p>Alcanzamos eficiencias de hasta <strong>210 lm/W</strong>, protecciones <strong>IP66 / IK10</strong>, supresión de sobretensiones y distribución fotométrica precisa según cada proyecto.</p>
   </div>
 </section>
 
 <section id="catalogo">
-  <h2>Luminarias Fotux</h2>
+  <h2 class="section">Luminarias Fotux</h2>
   <div class="catalogo">
     <div class="producto">
       <div class="imgbox"><img src="img/HIGH_BAY_HB_GL-210lmFOTUX-1.webp" alt="Campana Industrial Fotux"></div>
-      <p><strong>Campana Industrial</strong><br>100/150/200 W – hasta 210 lm/W – IP66/IK10 – Flicker Free – Dimmable</p>
+      <p><strong>Campana Industrial (UFO)</strong><br>100/150/200 W – hasta 210 lm/W – IP66/IK10 – Flicker Free – Regulable</p>
     </div>
     <div class="producto">
       <div class="imgbox"><img src="img/PROYECTOR_DE_AREA-170lm_GLITE_GL_FT.webp" alt="Proyector Área Tipo IV Fotux"></div>
       <p><strong>Proyector Área Tipo IV</strong><br>150/200 W – 150 lm/W – IP66/IK10 – 1700K/2200K – Supresor 10 kV</p>
     </div>
     <div class="producto">
-      <div class="imgbox"><img src="img/ALUMBRADO_PUBLICO_TIPOX_GLAP-FOTUX.jpg   ← en la raíz del repo" alt="Luminaria Pública 1700°K GL AP-FOTUX"></div>
+      <div class="imgbox"><img src="ALUMBRADO_PUBLICO_TIPOX_GLAP-FOTUX.jpg" alt="Luminaria Pública Fotux"></div>
       <p><strong>Luminaria Pública</strong><br>120/150/200 W – 105 lm/W – IP66/IK10 – Tipo II – DS1</p>
     </div>
   </div>
 </section>
 
 <section id="calculadora">
-  <h2>Calculadora lumínica y retorno de inversión</h2>
+  <h2 class="section">Calculadora lumínica y retorno de inversión</h2>
   <div class="grid-form">
-    <div><label>Selecciona luminaria Fotux</label>
-      <select id="preset">
-        <option value="hb">Campana Industrial</option>
-        <option value="tipoIV">Proyector Área Tipo IV</option>
-        <option value="tipoII">Luminaria Pública</option>
-        <option value="custom">Personalizado</option>
-      </select>
-    </div>
     <div><label>Flujo por luminaria (lm)</label><input type="number" id="flujo" value="42000"></div>
     <div><label>Potencia por luminaria (W)</label><input type="number" id="potencia" value="200"></div>
-    <div><label>Largo (m)</label><input type="number" id="largo" value="30"></div>
-    <div><label>Ancho (m)</label><input type="number" id="ancho" value="20"></div>
-    <div><label>Altura montaje (m)</label><input type="number" id="altura" value="8"></div>
-    <div><label>Horas de uso al mes</label><input type="number" id="horas" value="360"></div>
-    <div><label>Potencia actual (W)</label><input type="number" id="potenciaActual" value="400"></div
-
+    <div><label>Cantidad de luminarias</label><input type="number" id="cantidad" value="12"></div>
+    <div><label>Largo del área (m)</label><input type="number" id="largo" value="30"></div>
+    <div><label>Ancho del área (m)</label><input type="number" id="ancho" value="20"></div>
+    <div><label>Altura de montaje (m)</label><input type="number" id="altura" value="8"></div>
+    <div><label>Horas de uso al mes</label><input type="number" id="horasMes"
