@@ -16,6 +16,9 @@
     th, td { border: 1px solid #555; padding: 10px; text-align: left; }
     th { background-color: #222; }
     .contacto { background-color: #222; padding: 20px; margin-top: 20px; border: 1px solid #ffc107; }
+    form label { display: block; margin-top: 10px; }
+    form input, form select { width: 100%; max-width: 300px; padding: 8px; margin-top: 5px; }
+    output { display: block; margin-top: 15px; font-size: 1.2em; color: #ffc107; }
   </style>
 </head>
 <body>
@@ -64,6 +67,37 @@
   </table>
 </section>
 
+<section id="calculadora-luminica">
+  <h2>Calculadora Lumínica</h2>
+  <p>Completa los datos para estimar el número de luminarias necesarias y su distribución óptima.</p>
+  
+  <img src="img/EQUIPO_SECTORES_DE_ALTA_TEMPERATURA.webp" alt="Distribución de luminarias" class="imagen-industrial">
+
+  <form oninput="{
+    let area = parseFloat(document.getElementById('area').value) || 0;
+    let lux = parseFloat(document.getElementById('lux').value) || 0;
+    let eficiencia = parseFloat(document.getElementById('eficiencia').value) || 1;
+    let factorMantenimiento = parseFloat(document.getElementById('factor').value) || 1;
+    let lumenTotal = (area * lux) / factorMantenimiento;
+    let potenciaTotal = lumenTotal / eficiencia;
+    document.getElementById('resultado').value = lumenTotal.toFixed(0) + ' lm (' + potenciaTotal.toFixed(1) + ' W)';
+  }">
+    <label for="area">Área a iluminar (m²):</label>
+    <input type="number" id="area" value="100" min="1" required>
+
+    <label for="lux">Nivel de iluminación requerido (lux):</label>
+    <input type="number" id="lux" value="300" min="1" required>
+
+    <label for="eficiencia">Eficiencia de luminaria (lm/W):</label>
+    <input type="number" id="eficiencia" value="210" min="1" required>
+
+    <label for="factor">Factor de mantenimiento (0.1 a 1.0):</label>
+    <input type="number" id="factor" value="0.8" step="0.01" min="0.1" max="1" required>
+
+    <output id="resultado">0 lm (0 W)</output>
+  </form>
+</section>
+
 <section class="contacto">
   <h2>Contacto</h2>
   <p><strong>Fernando Claudio Tello Cabello</strong><br>
@@ -75,5 +109,7 @@
 
 </body>
 </html>
+
+
 
 
