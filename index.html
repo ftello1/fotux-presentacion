@@ -27,7 +27,7 @@
       margin: 0;
     }
     .hero {
-      background-image: url('img/HIGH_BAY_HB_GL-210lmFOTUX-1.webp');
+      background-image: url('img/HIGH_BAY_HB_GL-210lmFOTUX-1.jpg');
       background-size: cover;
       background-position: center;
       height: 300px;
@@ -59,44 +59,13 @@
       font-size: 18px;
       line-height: 1.6;
     }
-    .catalogo {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .producto {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 300px;
-      text-align: center;
-      padding: 20px;
-    }
-    .producto img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 4px;
-    }
-    .producto p {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    .calculadora {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-top: 40px;
-    }
-    .calculadora label {
+    .calculadora input, .calculadora label {
       display: block;
+      width: 100%;
       margin-top: 10px;
     }
     .calculadora input {
-      width: 100%;
       padding: 8px;
-      margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
@@ -114,18 +83,6 @@
       font-weight: bold;
       color: #006600;
     }
-    .cta {
-      text-align: center;
-      margin-top: 40px;
-    }
-    .cta a {
-      background-color: #ffcc00;
-      color: #000;
-      padding: 12px 24px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-    }
     footer {
       background-color: #1a1a1a;
       color: #ccc;
@@ -136,7 +93,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <img src="img/logo-fotux.png" alt="Logo Fotux" />
     <h1>FOTUX Light & Electrical</h1>
@@ -149,70 +105,72 @@
   <section class="section">
     <h3>Presencia Nacional y Clientes de Alto Nivel</h3>
     <p>
-      Fotux Chile está presente en todo el territorio nacional, desde faenas mineras en el norte hasta instalaciones agroindustriales en el sur. Atendemos directamente a <strong>ingenieros eléctricos, encargados de mantención, jefes de obra, arquitectos, áreas de procurement y operaciones</strong> de las principales empresas del país.
-      <br><br>
-      Muchas de estas compañías tienen presencia internacional, lo que exige estándares técnicos, logísticos y de cumplimiento equivalentes a los de corporaciones globales. Fotux responde con soluciones de iluminación robustas, eficientes y certificadas, listas para ambientes exigentes como minería subterránea, plantas termoeléctricas, agroindustria, puertos y vialidad pública.
+      Fotux Chile está presente en todo el territorio nacional, desde faenas mineras en el norte hasta instalaciones agroindustriales en el sur. Atendemos directamente a ingenieros eléctricos, encargados de mantención, jefes de obra, arquitectos, áreas de procurement y operaciones de las principales empresas del país.
     </p>
   </section>
 
-  <section class="section">
-    <h3>Eficiencia Lumínica Superior</h3>
-    <p>
-      Fotux Chile cuenta con la <strong>campana UFO más eficiente del país</strong>, con una potencia lumínica de <strong>210 lúmenes por watt</strong>. Este rendimiento permite reducir el consumo energético en faenas industriales, mineras y logísticas, sin comprometer la calidad de iluminación.
-    </p>
-  </section>
-
-  <section class="section">
-    <h3>Cumplimiento de Norma DS1 — Iluminación Exterior Responsable</h3>
-    <p>
-      Nuestros <strong>proyectores de área y luminarias públicas</strong> están calibrados entre <strong>1700K° y 2200K°</strong>, cumpliendo con la <strong>norma DS1 de contaminación lumínica</strong> exigida en proyectos de iluminación exterior. Esto permite instalar nuestros equipos en zonas de protección ambiental, cielos oscuros, áreas rurales y entornos regulados por municipalidades o servicios públicos.
-    </p>
-  </section>
-
-  <section class="section">
-    <h3>Catálogo Técnico</h3>
-    <div class="catalogo">
-      <div class="producto">
-        <img src="img/PROYECTOR_DE_AREA_1700K_GLITE_GL_FOTUX.webp" alt="Proyector GL Ámbar" />
-        <p>Proyector GL Ámbar 1700K – IP66 – 150W</p>
+  <section class="section" style="background-color:#f7f7f7;">
+    <h3>Catálogo Técnico — Luminarias Fotux</h3>
+    <p>Soluciones de iluminación para minería, industria y vialidad pública. Alta eficiencia, cumplimiento normativo y durabilidad extrema.</p>
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+      <div style="flex:1; min-width:280px; background-color:#fff; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); padding:20px; text-align:center;">
+        <img src="img/HIGH_BAY_HB_GL-210lmFOTUX-1.jpg" alt="Campana UFO HB GL" style="max-width:100%; height:auto; border-radius:4px;" />
+        <h4>Campana UFO HB GL</h4>
+        <p>210 lm/W — IP65 — Alta eficiencia para faenas industriales</p>
       </div>
-      <div class="producto">
-        <img src="img/ALUMBRADO_PUBLICO_TIPOX_GLAP-FOTUX.jpg" alt="Luminaria Pública GL AP" />
-        <p>Luminaria Pública GL AP – 1700K – IP66 – 105 lm/W</p>
+      <div style="flex:1; min-width:280px; background-color:#fff; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); padding:20px; text-align:center;">
+        <img src="PROYECTOR_DE_AREA_1700K_GLITE_GL_FOTUX.webp.png" alt="Proyector GL Ámbar" style="max-width:100%; height:auto; border-radius:4px;" />
+        <h4>Proyector GL Ámbar</h4>
+        <p>1700K — Norma DS1 — IP66 — Ideal para zonas de protección ambiental</p>
       </div>
-      <div class="producto">
-        <img src="img/HIGH_BAY_HB_GL-210lmFOTUX-1.webp" alt="Campana UFO HB GL" />
-        <p>Campana UFO HB GL – 210 lm/W – IP65</p>
+      <div style="flex:1; min-width:280px; background-color:#fff; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); padding:20px; text-align:center;">
+        <img src="img/LUMINARIA_PUBLICA_FOTUX_2200K.jpg" alt="Luminaria Pública Fotux" style="max-width:100%; height:auto; border-radius:4px;" />
+        <h4>Luminaria Pública Fotux</h4>
+        <p>2200K — IP66 — Fotometría optimizada para vialidad y espacios urbanos</p>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h3>Calculadora Lumínica Avanzada</h3>
+    <h3>Simulador de Ahorro y Retorno de Inversión</h3>
     <div class="calculadora">
-      <label for="potencia">Potencia del equipo (W):</label>
+      <label for="potencia">Potencia del equipo Fotux (W):</label>
       <input type="number" id="potencia" />
-
       <label for="horas">Horas de uso diario:</label>
       <input type="number" id="horas" />
-
       <label for="dias">Días de uso mensual:</label>
       <input type="number" id="dias" />
-
       <label for="costo">Costo kWh ($):</label>
       <input type="number" id="costo" />
-
-      <button onclick="calcularConsumo()">Calcular Consumo</button>
+      <label for="cantidad">Cantidad de luminarias:</label>
+      <input type="number" id="cantidad" />
+      <label for="precio">Precio unitario Fotux ($):</label>
+      <input type="number" id="precio" />
+      <label for="eficiencia">Eficiencia lumínica Fotux (lm/W):</label>
+      <input type="number" id="eficiencia" />
+      <label for="vida">Vida útil Fotux (horas):</label>
+      <input type="number" id="vida" />
+      <button onclick="calcularImpacto()">Calcular Impacto</button>
       <div class="resultado" id="resultado"></div>
     </div>
-  </section>
+    <script>
+      function calcularImpacto() {
+        const potencia = parseFloat(document.getElementById('potencia').value);
+        const horas = parseFloat(document.getElementById('horas').value);
+        const dias = parseFloat(document.getElementById('dias').value);
+        const costo = parseFloat(document.getElementById('costo').value);
+        const cantidad = parseFloat(document.getElementById('cantidad').value);
+        const precio = parseFloat(document.getElementById('precio').value);
+        const eficiencia = parseFloat(document.getElementById('eficiencia').value);
+        const vida = parseFloat(document.getElementById('vida').value);
 
-  <section class="section">
-    <h3>Asesoría Profesional para Grandes Proyectos</h3>
-    <p>
-      Nuestro equipo técnico acompaña a clientes en todas las etapas del proyecto: realizamos <strong>levantamientos en terreno</strong>, <strong>estudios lumínicos personalizados</strong> y entregamos soluciones llave en mano que aseguran el cumplimiento normativo, la eficiencia energética y la mejor relación precio-calidad.
-    </p>
-  </section>
+        if ([potencia, horas, dias, costo, cantidad, precio, eficiencia, vida].some(isNaN)) {
+          document.getElementById('resultado').innerText = "Por favor, completa todos los campos.";
+          return;
+        }
 
-  <section class="section">
-    <h3>Contacto Comercial y Técnico</
+        const consumoFotux = (potencia * horas * dias * cantidad) / 1000;
+        const consumoTradicional = (potencia * 1.8 * horas * dias * cantidad) / 1000;
+        const costoFotux = consumoFotux * costo;
+        const costoTradicional = consumoTradicional * costo;
+        const
