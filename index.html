@@ -1,189 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fotux Chile — Soluciones de Iluminación Técnica</title>
+  <meta charset="UTF-8">
+  <title>Fotux Chile – Iluminación Industrial de Alta Eficiencia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
       color: #333;
     }
-    header {
-      background-color: #1a1a1a;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-    }
-    header img {
-      height: 50px;
-      margin-right: 15px;
-    }
-    header h1 {
-      color: #ffcc00;
-      font-size: 24px;
-      margin: 0;
-    }
-    .hero {
-      background-image: url('img/HIGH_BAY_HB_GL-210lmFOTUX-1.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 1px 1px 4px #000;
-    }
-    .hero h2 {
-      font-size: 36px;
-      background-color: rgba(0,0,0,0.6);
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-    .section {
-      padding: 40px 20px;
-      max-width: 1100px;
+    .container {
+      max-width: 1000px;
       margin: auto;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
-    .section h3 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #222;
-      border-left: 5px solid #ffcc00;
-      padding-left: 10px;
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
     }
-    .section p {
-      font-size: 18px;
-      line-height: 1.6;
+    .logo img {
+      max-width: 220px;
     }
-    .calculadora input, .calculadora label {
-      display: block;
-      width: 100%;
+    h1, h2 {
+      color: #005a9c;
+      text-align: center;
+    }
+    .intro, .features, .calculator, .cta {
+      margin-bottom: 40px;
+    }
+    .features img {
+      max-width: 100%;
       margin-top: 10px;
+      border-radius: 8px;
     }
-    .calculadora input {
-      padding: 8px;
+    .cta {
+      text-align: center;
+    }
+    .cta a {
+      background-color: #005a9c;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-    .calculadora button {
-      margin-top: 20px;
+    label {
+      font-weight: bold;
+    }
+    button {
+      background-color: #005a9c;
+      color: white;
       padding: 10px 20px;
-      background-color: #ffcc00;
       border: none;
-      font-weight: bold;
+      border-radius: 6px;
       cursor: pointer;
-      border-radius: 5px;
+      margin-top: 10px;
     }
-    .resultado {
-      margin-top: 20px;
-      font-weight: bold;
-      color: #006600;
-    }
-    footer {
-      background-color: #1a1a1a;
-      color: #ccc;
-      text-align: center;
+    .result {
+      background-color: #e8f4ff;
       padding: 20px;
-      font-size: 14px;
+      border-radius: 6px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="img/logo-fotux.png" alt="Logo Fotux" />
-    <h1>FOTUX Light & Electrical</h1>
-  </header>
+  <div class="container">
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="img/imglogo-fotux.png.png" alt="Logo Fotux Chile">
+    </div>
 
-  <div class="hero">
-    <h2>Iluminación Técnica para Minería, Industria y Vialidad</h2>
+    <!-- TITULO -->
+    <h1>Soluciones de Iluminación Industrial de Alta Eficiencia</h1>
+
+    <!-- INTRO -->
+    <div class="intro">
+      <p>En <strong>Fotux Chile</strong>, lideramos con luminarias de <strong>210 lm/W</strong>, certificadas bajo norma <strong>DS1</strong>. Diseñadas para minería, industria y obras públicas, nuestras soluciones combinan eficiencia energética, cumplimiento normativo y diseño impecable.</p>
+    </div>
+
+    <!-- PRODUCTO DESTACADO -->
+    <div class="features">
+      <h2>🔧 Campana UFO 210 lm/W</h2>
+      <p>Alta eficiencia, bajo mantenimiento, retorno rápido de inversión.</p>
+      <img src="img/imgHIGH_BAY_HB_GL-210lmFOTUX-1.webp.png" alt="Campana UFO Fotux">
+    </div>
+
+    <!-- COMPARATIVA -->
+    <div class="features">
+      <h2>📊 Comparativa de Ahorro</h2>
+      <p>Demostramos con datos reales cómo nuestras luminarias superan a la competencia.</p>
+      <img src="img/impacto_luminarias_fotux.png" alt="Gráfico de eficiencia">
+    </div>
+
+    <!-- CALCULADORA -->
+    <div class="calculator">
+      <h2>🧮 Calculadora de Proyecto</h2>
+      <form id="calcForm">
+        <label>Potencia (W):</label><input type="number" id="potencia">
+        <label>Eficiencia (lm/W):</label><input type="number" id="eficiencia">
+        <label>Horas por día:</label><input type="number" id="horas">
+        <label>Días por año:</label><input type="number" id="dias">
+        <label>Costo kWh (CLP):</label><input type="number" id="costoKwh">
+        <label>Vida útil (horas):</label><input type="number" id="vida">
+        <label>Mantenimiento anual (CLP):</label><input type="number" id="mantencion">
+        <label>Cantidad de luminarias:</label><input type="number" id="cantidad">
+        <label>Costo unitario (CLP):</label><input type="number" id="costoUnitario">
+        <button type="button" onclick="calcular()">Comparar</button>
+      </form>
+      <div class="result" id="resultado"></div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="cta">
+      <p>¿Quieres transformar tu proyecto con Fotux?</p>
+      <a href="https://fotux-presentacion.vercel.app" target="_blank">Ver presentación completa</a>
+    </div>
   </div>
 
-  <section class="section">
-    <h3>Presencia Nacional y Clientes de Alto Nivel</h3>
-    <p>
-      Fotux Chile está presente en todo el territorio nacional, desde faenas mineras en el norte hasta instalaciones agroindustriales en el sur. Atendemos directamente a ingenieros eléctricos, encargados de mantención, jefes de obra, arquitectos, áreas de procurement y operaciones de las principales empresas del país.
-    </p>
-  </section>
+  <!-- SCRIPT -->
+  <script>
+    function calcular() {
+      const potencia = +document.getElementById('potencia').value;
+      const horas = +document.getElementById('horas').value;
+      const dias = +document.getElementById('dias').value;
+      const costoKwh = +document.getElementById('costoKwh').value;
+      const vida = +document.getElementById('vida').value;
+      const mantencion = +document.getElementById('mantencion').value;
+      const cantidad = +document.getElementById('cantidad').value;
+      const costoUnitario = +document.getElementById('costoUnitario').value;
 
-  <section class="section" style="background-color:#f7f7f7;">
-    <h3>Catálogo Técnico — Luminarias Fotux</h3>
-    <p>Soluciones de iluminación para minería, industria y vialidad pública. Alta eficiencia, cumplimiento normativo y durabilidad extrema.</p>
-    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;">
-      <div style="flex:1; min-width:280px; background-color:#fff; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); padding:20px; text-align:center;">
-        <img src="img/HIGH_BAY_HB_GL-210lmFOTUX-1.jpg" alt="Campana UFO HB GL" style="max-width:100%; height:auto; border-radius:4px;" />
-        <h4>Campana UFO HB GL</h4>
-        <p>210 lm/W — IP65 — Alta eficiencia para faenas industriales</p>
-      </div>
-      <div style="flex:1; min-width:280px; background-color:#fff; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); padding:20px; text-align:center;">
-        <img src="PROYECTOR_DE_AREA_1700K_GLITE_GL_FOTUX.webp.png" alt="Proyector GL Ámbar" style="max-width:100%; height:auto; border-radius:4px;" />
-        <h4>Proyector GL Ámbar</h4>
-        <p>1700K — Norma DS1 — IP66 — Ideal para zonas de protección ambiental</p>
-      </div>
-      <div style="flex:1; min-width:280px; background-color:#fff; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); padding:20px; text-align:center;">
-        <img src="img/LUMINARIA_PUBLICA_FOTUX_2200K.jpg" alt="Luminaria Pública Fotux" style="max-width:100%; height:auto; border-radius:4px;" />
-        <h4>Luminaria Pública Fotux</h4>
-        <p>2200K — IP66 — Fotometría optimizada para vialidad y espacios urbanos</p>
-      </div>
-    </div>
-  </section>
-<div style="text-align:center; margin-bottom:30px;">
-  <img src="img/impacto_luminarias_fotux.png" alt="Distribución Dialux Fotux" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);" />
-  <p style="font-size:16px; color:#555;">Distribución fotométrica simulada — eficiencia y cobertura de luminarias Fotux</p>
-</div>
-<section class="section">
-  <h3>Distribución Fotométrica Simulada</h3>
-  <div style="text-align:center; margin-bottom:30px;">
-    <img src="img/impacto_luminarias_fotux.png" alt="Distribución Dialux Fotux" style="max-width:100%; height:auto; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);" />
-    <p style="font-size:16px; color:#555;">Simulación visual del impacto lumínico — eficiencia y cobertura de luminarias Fotux en planta industrial</p>
-  </div>
-</section>
-
-  <section class="section">
-    <h3>Simulador de Ahorro y Retorno de Inversión</h3>
-    <div class="calculadora">
-      <label for="potencia">Potencia del equipo Fotux (W):</label>
-      <input type="number" id="potencia" />
-      <label for="horas">Horas de uso diario:</label>
-      <input type="number" id="horas" />
-      <label for="dias">Días de uso mensual:</label>
-      <input type="number" id="dias" />
-      <label for="costo">Costo kWh ($):</label>
-      <input type="number" id="costo" />
-      <label for="cantidad">Cantidad de luminarias:</label>
-      <input type="number" id="cantidad" />
-      <label for="precio">Precio unitario Fotux ($):</label>
-      <input type="number" id="precio" />
-      <label for="eficiencia">Eficiencia lumínica Fotux (lm/W):</label>
-      <input type="number" id="eficiencia" />
-      <label for="vida">Vida útil Fotux (horas):</label>
-      <input type="number" id="vida" />
-      <button onclick="calcularImpacto()">Calcular Impacto</button>
-      <div class="resultado" id="resultado"></div>
-    </div>
-    <script>
-      function calcularImpacto() {
-        const potencia = parseFloat(document.getElementById('potencia').value);
-        const horas = parseFloat(document.getElementById('horas').value);
-        const dias = parseFloat(document.getElementById('dias').value);
-        const costo = parseFloat(document.getElementById('costo').value);
-        const cantidad = parseFloat(document.getElementById('cantidad').value);
-        const precio = parseFloat(document.getElementById('precio').value);
-        const eficiencia = parseFloat(document.getElementById('eficiencia').value);
-        const vida = parseFloat(document.getElementById('vida').value);
-
-        if ([potencia, horas, dias, costo, cantidad, precio, eficiencia, vida].some(isNaN)) {
-          document.getElementById('resultado').innerText = "Por favor, completa todos los campos.";
-          return;
-        }
-
-        const consumoFotux = (potencia * horas * dias * cantidad) / 1000;
-        const consumoTradicional = (potencia * 1.8 * horas * dias * cantidad) / 1000;
-        const costoFotux = consumoFotux * costo;
-        const costoTradicional = consumoTradicional * costo;
-        const
-
-
+      const consumoAnual = (potencia * horas * dias * cantidad) / 1000;
+      const costoEnergia = consumoAnual * costoKwh;
+      const costoTotal = costoEnergia + mantencion;
+      const inversion = costoUnitario * cantidad;
+      const resultado = `
+        <h3>🔎 Resultados</h3>
+        <p><strong>Consumo anual:</strong> ${consumoAnual.toFixed(2)} kWh</p>
+        <p><strong>Costo energético anual:</strong> $${costoEnergia.toLocaleString()}</p>
+        <p><strong>Costo total anual:</strong> $${costoTotal.toLocaleString()}</p>
+        <p><strong>Inversión inicial:</strong> $${inversion.toLocaleString()}</p>
+        <p><strong>ROI estimado:</strong> ${(inversion / costoTotal).toFixed(2)} años</p>
+      `;
+      document.getElementById('resultado').innerHTML = resultado;
+    }
+  </script>
+</body>
+</html>
