@@ -1,189 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Fotux Chile – Iluminación Profesional</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #000;
-    }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px;
-      background-color: #fff;
-    }
-    h1, h2 {
-      color: #000;
-      text-align: center;
-      border-bottom: 2px solid #fdd835;
-      padding-bottom: 10px;
-    }
-    .logo {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .logo img {
-      max-width: 220px;
-    }
-    .intro, .features, .calculator, .cta {
-      margin-bottom: 40px;
-    }
-    .features img, .calculator img {
-      max-width: 100%;
-      margin-top: 10px;
-      border-radius: 8px;
-      border: 2px solid #000;
-    }
-    .producto {
-      margin-bottom: 30px;
-      background-color: #fdd835;
-      padding: 20px;
-      border-radius: 8px;
-      color: #000;
-    }
-    form input, form select {
-      width: 100%;
-      padding: 10px;
-      margin: 6px 0;
-      border: 1px solid #000;
-      border-radius: 4px;
-    }
-    label {
-      font-weight: bold;
-    }
-    button {
-      background-color: #000;
-      color: #fdd835;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .result {
-      background-color: #fdd835;
-      padding: 20px;
-      border-radius: 6px;
-      margin-top: 20px;
-      color: #000;
-    }
-    .cta {
-      text-align: center;
-    }
-    .cta a {
-      background-color: #000;
-      color: #fdd835;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="logo">
-      <img src="imglogo-fotux.png.png" alt="Logo Fotux Chile">
-    </div>
+<!-- LOGO -->
+<div class="logo">
+  <img src="imglogo-fotux.png.png" alt="Logo Fotux Chile">
+</div>
 
-    <h1>Fotux Chile – Iluminación Profesional para Minería, Industria y Construcción</h1>
+<!-- PRODUCTO DESTACADO -->
+<div class="features">
+  <h2>🔧 Campana UFO 210 lm/W</h2>
+  <p>Alta eficiencia, bajo mantenimiento, retorno rápido de inversión.</p>
+  <img src="imgHIGH_BAY_HB_GL-210lmFOTUX-1.webp.png" alt="Campana UFO Fotux">
+</div>
 
-    <div class="intro">
-      <p><strong>Fotux Chile</strong> lidera el mercado con luminarias de <strong>alta eficiencia (hasta 210 lm/W)</strong>, cumplimiento normativo <strong>DS1</strong> para exteriores, y asesoría técnica especializada. Nuestro valor agregado incluye:</p>
-      <ul>
-        <li>📐 Levantamientos técnicos en terreno</li>
-        <li>💡 Estudios lumínicos personalizados</li>
-        <li>📊 Comparativas de eficiencia y retorno de inversión</li>
-        <li>🛠 Acompañamiento en instalación y puesta en marcha</li>
-      </ul>
-    </div>
+<!-- COMPARATIVA -->
+<div class="features">
+  <h2>📊 Comparativa de Ahorro</h2>
+  <p>Demostramos con datos reales cómo nuestras luminarias superan a la competencia.</p>
+  <img src="impacto_luminarias_fotux.png" alt="Gráfico de eficiencia">
+</div>
 
-    <div class="features">
-      <h2>💡 Catálogo Técnico Fotux</h2>
+<!-- PROYECTOR -->
+<div class="features">
+  <h2>🔦 Proyector LED de Área IP66</h2>
+  <p>Resistente al agua y polvo, óptica profesional, ideal para patios industriales y zonas de carga.</p>
+  <img src="proyector-led-fotux-ip66.png" alt="Proyector LED Fotux">
+</div>
 
-      <div class="producto">
-        <h3>Campana UFO 210 lm/W</h3>
-        <p>Ideal para galpones, faenas mineras e industria pesada. Alta eficiencia, bajo mantenimiento, retorno rápido.</p>
-        <img src="imgHIGH_BAY_HB_GL-210lmFOTUX-1.webp.png" alt="Campana UFO Fotux">
-      </div>
-
-      <div class="producto">
-        <h3>Proyector LED de Área IP66</h3>
-        <p>Resistente al agua y polvo, óptica profesional, ideal para patios industriales y zonas de carga.</p>
-        <img src="proyector-led-fotux-ip66.png" alt="Proyector LED Fotux">
-      </div>
-
-      <div class="producto">
-        <h3>Luminaria Pública Fotux DS1</h3>
-        <p>Cumple norma DS1 para espacios exteriores, eficiencia superior, ideal para caminos, accesos y obras públicas.</p>
-        <img src="street-light-fotux-150w.png" alt="Luminaria Pública Fotux">
-      </div>
-
-      <div class="producto">
-        <h3>Comparativa de Ahorro</h3>
-        <p>Demostramos con datos reales cómo nuestras luminarias superan a la competencia.</p>
-        <img src="impacto_luminarias_fotux.png" alt="Gráfico de eficiencia">
-      </div>
-    </div>
-
-    <div class="calculator">
-      <h2>🧮 Calculadora de Proyecto</h2>
-      <form id="calcForm">
-        <label>Área (m²):</label><input type="number" id="area">
-        <label>Altura (m):</label><input type="number" id="altura">
-        <label>Lux requerido:</label><input type="number" id="lux">
-        <label>Horas por día:</label><input type="number" id="horas">
-        <label>Días por año:</label><input type="number" id="dias">
-        <label>Costo kWh (CLP):</label><input type="number" id="costoKwh">
-        <label>Selecciona luminaria Fotux:</label>
-        <select id="fotuxSelect" onchange="actualizarImagen()">
-          <option value="ufo" data-lumen="210" data-potencia="100" data-imagen="imgHIGH_BAY_HB_GL-210lmFOTUX-1.webp.png">Campana UFO 210 lm/W</option>
-          <option value="proyector" data-lumen="160" data-potencia="150" data-imagen="proyector-led-fotux-ip66.png">Proyector LED IP66</option>
-          <option value="publica" data-lumen="130" data-potencia="100" data-imagen="street-light-fotux-150w.png">Luminaria Pública DS1</option>
-        </select>
-        <label>Precio unitario (CLP):</label><input type="number" id="precio">
-        <label>Mantenimiento anual (CLP):</label><input type="number" id="mantencion">
-        <button type="button" onclick="calcular()">Calcular</button>
-      </form>
-
-      <div class="result" id="resultado"></div>
-      <div id="imagenDistribucion" style="text-align:center; margin-top:20px;">
-        <img src="imgHIGH_BAY_HB_GL-210lmFOTUX-1.webp.png" alt="Distribución Fotux" style="max-width:300px;">
-      </div>
-    </div>
-
-    <div class="cta">
-      <p>¿Quieres transformar tu proyecto con Fotux?</p>
-      <a href="https://fotux-presentacion.vercel.app" target="_blank">Ver presentación completa</a>
-    </div>
-  </div>
-
-  <script>
-    function actualizarImagen() {
-      const select = document.getElementById('fotuxSelect');
-      const imagen = select.options[select.selectedIndex].getAttribute('data-imagen');
-      document.querySelector('#imagenDistribucion img').src = imagen;
-    }
-
-    function calcular() {
-      const area = +document.getElementById('area').value;
-      const altura = +document.getElementById('altura').value;
-      const lux = +document.getElementById('lux').value;
-      const horas = +document.getElementById('horas').value;
-      const dias = +document.getElementById('dias').value;
-      const costoKwh = +document.getElementById('costoKwh').value;
-      const precio = +document.getElementById('precio').value;
-      const mantencion = +document.getElementById('mantencion').value;
-
-      const select = document.getElementById('fotuxSelect');
-      const lumen = +select.options[select.selectedIndex].getAttribute('data-lumen');
-      const potencia = +select.options[select.selectedIndex].getAttribute('data-potencia');
-
-      const lumenesRequeridos = area * lux;
-      const lumenesPorLuminaria = lumen
+<!-- LUMINARIA PÚBLICA -->
+<div class="features">
+  <h2>🚦 Luminaria Pública Fotux DS1</h2>
+  <p>Cumple norma DS1 para espacios exteriores, eficiencia superior, ideal para caminos, accesos y obras públicas.</p>
+  <img src="street-light-fotux-150w.png" alt="Luminaria Pública Fotux">
+</div>
