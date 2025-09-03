@@ -2,62 +2,30 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Fotux Chile – Iluminación Industrial de Alta Eficiencia</title>
+  <title>Fotux Chile – Comparativa de Iluminación</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
       background-color: #f4f4f4;
-      color: #333;
+      margin: 0;
+      padding: 20px;
     }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px;
-      background-color: #fff;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-    .logo {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .logo img {
-      max-width: 220px;
-    }
-    h1, h2 {
+    h2 {
       color: #005a9c;
-      text-align: center;
-    }
-    .intro, .features, .calculator, .cta {
-      margin-bottom: 40px;
-    }
-    .features img {
-      max-width: 100%;
-      margin-top: 10px;
-      border-radius: 8px;
-    }
-    .cta {
-      text-align: center;
-    }
-    .cta a {
-      background-color: #005a9c;
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 6px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
     }
     label {
       font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
     button {
       background-color: #005a9c;
@@ -66,7 +34,6 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      margin-top: 10px;
     }
     .result {
       background-color: #e8f4ff;
@@ -74,102 +41,109 @@
       border-radius: 6px;
       margin-top: 20px;
     }
+    #imagenLuminaria {
+      text-align: center;
+      margin-top: 20px;
+    }
+    #imagenLuminaria img {
+      max-width: 300px;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- LOGO -->
-    <div class="logo">
-      <img src="imglogo-fotux.png.png" alt="Logo Fotux Chile">
-    </div>
 
-    <!-- TITULO -->
-    <h1>Soluciones de Iluminación Industrial de Alta Eficiencia</h1>
+  <div class="calculator">
+    <h2>🧮 Calculadora Comparativa Fotux vs Competencia</h2>
+    <form id="calcForm">
+      <label>Lúmenes requeridos totales:</label><input type="number" id="lumenesRequeridos">
 
-    <!-- INTRO -->
-    <div class="intro">
-      <p>En <strong>Fotux Chile</strong>, lideramos con luminarias de <strong>210 lm/W</strong>, certificadas bajo norma <strong>DS1</strong>. Diseñadas para minería, industria y obras públicas, nuestras soluciones combinan eficiencia energética, cumplimiento normativo y diseño impecable.</p>
-    </div>
+      <label>Selecciona luminaria Fotux:</label>
+      <select id="fotuxSelect" onchange="actualizarImagen()">
+        <option value="fotux-ufo" data-lumen="210" data-potencia="100" data-imagen="campana-ufo-210lmw.png">Campana UFO 210 lm/W</option>
+        <option value="fotux-240w" data-lumen="190" data-potencia="240" data-imagen="campana-industrial-fotux-240w.png">Campana Industrial 240W</option>
+      </select>
 
-    <!-- PRODUCTO DESTACADO -->
-    <div class="features">
-      <h2>🔧 Campana UFO 210 lm/W</h2>
-      <p>Alta eficiencia, bajo mantenimiento, retorno rápido de inversión.</p>
-      <img src="imgHIGH_BAY_HB_GL-210lmFOTUX-1.webp.png" alt="Campana UFO Fotux">
-    </div>
+      <label>Selecciona luminaria competencia:</label>
+      <select id="competenciaSelect">
+        <option value="comp-150lmw" data-lumen="150" data-potencia="150">Genérica 150 lm/W</option>
+        <option value="comp-120lmw" data-lumen="120" data-potencia="200">Genérica 120 lm/W</option>
+      </select>
 
-    <!-- COMPARATIVA -->
-    <div class="features">
-      <h2>📊 Comparativa de Ahorro</h2>
-      <p>Demostramos con datos reales cómo nuestras luminarias superan a la competencia.</p>
-      <img src="impacto_luminarias_fotux.png" alt="Gráfico de eficiencia">
-    </div>
+      <label>Horas por día:</label><input type="number" id="horas" value="10">
+      <label>Días por año:</label><input type="number" id="dias" value="300">
+      <label>Costo kWh (CLP):</label><input type="number" id="costoKwh" value="130">
 
-    <!-- PROYECTOR -->
-    <div class="features">
-      <h2>🔦 Proyector LED de Área IP66</h2>
-      <p>Resistente al agua y polvo, óptica profesional, ideal para patios industriales y zonas de carga.</p>
-      <img src="proyector-led-fotux-ip66.png" alt="Proyector LED Fotux">
-    </div>
+      <label>Costo unitario Fotux (CLP):</label><input type="number" id="costoFotux" value="95000">
+      <label>Costo unitario competencia (CLP):</label><input type="number" id="costoComp" value="75000">
 
-    <!-- LUMINARIA PÚBLICA -->
-    <div class="features">
-      <h2>🚦 Luminaria Pública Fotux DS1</h2>
-      <p>Cumple norma DS1 para espacios exteriores, eficiencia superior, ideal para caminos, accesos y obras públicas.</p>
-      <img src="street-light-fotux-150w.png" alt="Luminaria Pública Fotux">
-    </div>
+      <label>Mantenimiento anual Fotux (CLP):</label><input type="number" id="mantFotux" value="0">
+      <label>Mantenimiento anual competencia (CLP):</label><input type="number" id="mantComp" value="15000">
 
-    <!-- CALCULADORA -->
-    <div class="calculator">
-      <h2>🧮 Calculadora de Proyecto</h2>
-      <form id="calcForm">
-        <label>Potencia (W):</label><input type="number" id="potencia">
-        <label>Eficiencia (lm/W):</label><input type="number" id="eficiencia">
-        <label>Horas por día:</label><input type="number" id="horas">
-        <label>Días por año:</label><input type="number" id="dias">
-        <label>Costo kWh (CLP):</label><input type="number" id="costoKwh">
-        <label>Vida útil (horas):</label><input type="number" id="vida">
-        <label>Mantenimiento anual (CLP):</label><input type="number" id="mantencion">
-        <label>Cantidad de luminarias:</label><input type="number" id="cantidad">
-        <label>Costo unitario (CLP):</label><input type="number" id="costoUnitario">
-        <button type="button" onclick="calcular()">Comparar</button>
-      </form>
-      <div class="result" id="resultado"></div>
-    </div>
+      <button type="button" onclick="calcular()">Comparar</button>
+    </form>
 
-    <!-- CTA FINAL -->
-    <div class="cta">
-      <p>¿Quieres transformar tu proyecto con Fotux?</p>
-      <a href="https://fotux-presentacion.vercel.app" target="_blank">Ver presentación completa</a>
+    <div class="result" id="resultado"></div>
+
+    <div id="imagenLuminaria">
+      <img src="campana-ufo-210lmw.png" alt="Luminaria Fotux">
     </div>
   </div>
 
-  <!-- SCRIPT -->
   <script>
+    function actualizarImagen() {
+      const select = document.getElementById('fotuxSelect');
+      const imagen = select.options[select.selectedIndex].getAttribute('data-imagen');
+      document.querySelector('#imagenLuminaria img').src = imagen;
+    }
+
     function calcular() {
-      const potencia = +document.getElementById('potencia').value;
+      const lumenesRequeridos = +document.getElementById('lumenesRequeridos').value;
       const horas = +document.getElementById('horas').value;
       const dias = +document.getElementById('dias').value;
       const costoKwh = +document.getElementById('costoKwh').value;
-      const vida = +document.getElementById('vida').value;
-      const mantencion = +document.getElementById('mantencion').value;
-      const cantidad = +document.getElementById('cantidad').value;
-      const costoUnitario = +document.getElementById('costoUnitario').value;
 
-      const consumoAnual = (potencia * horas * dias * cantidad) / 1000;
-      const costoEnergia = consumoAnual * costoKwh;
-      const costoTotal = costoEnergia + mantencion;
-      const inversion = costoUnitario * cantidad;
+      const fotux = document.getElementById('fotuxSelect').selectedOptions[0];
+      const comp = document.getElementById('competenciaSelect').selectedOptions[0];
 
-      const resultado = `
+      const lumenFotux = +fotux.getAttribute('data-lumen');
+      const potFotux = +fotux.getAttribute('data-potencia');
+      const imagenFotux = fotux.getAttribute('data-imagen');
+
+      const costoFotux = +document.getElementById('costoFotux').value;
+      const mantFotux = +document.getElementById('mantFotux').value;
+
+      const lumenComp = +comp.getAttribute('data-lumen');
+      const potComp = +comp.getAttribute('data-potencia');
+      const costoComp = +document.getElementById('costoComp').value;
+      const mantComp = +document.getElementById('mantComp').value;
+
+      const cantidadFotux = Math.ceil(lumenesRequeridos / (lumenFotux * potFotux));
+      const cantidadComp = Math.ceil(lumenesRequeridos / (lumenComp * potComp));
+
+      const consumoFotux = (potFotux * horas * dias * cantidadFotux) / 1000;
+      const consumoComp = (potComp * horas * dias * cantidadComp) / 1000;
+
+      const costoEnergiaFotux = consumoFotux * costoKwh;
+      const costoEnergiaComp = consumoComp * costoKwh;
+
+      const totalFotux = (costoFotux * cantidadFotux) + costoEnergiaFotux + mantFotux;
+      const totalComp = (costoComp * cantidadComp) + costoEnergiaComp + mantComp;
+
+      const ahorro = totalComp - totalFotux;
+      const roi = totalFotux / (ahorro || 1);
+
+      document.getElementById('resultado').innerHTML = `
         <h3>🔎 Resultados</h3>
-        <p><strong>Consumo anual:</strong> ${consumoAnual.toFixed(2)} kWh</p>
-        <p><strong>Costo energético anual:</strong> $${costoEnergia.toLocaleString()}</p>
-        <p><strong>Costo total anual:</strong> $${costoTotal.toLocaleString()}</p>
-        <p><strong>Inversión inicial:</strong> $${inversion.toLocaleString()}</p>
-        <p><strong>ROI estimado:</strong> ${(inversion / costoTotal).toFixed(2)} años</p>
+        <p><strong>Cantidad luminarias Fotux:</strong> ${cantidadFotux}</p>
+        <p><strong>Cantidad luminarias competencia:</strong> ${cantidadComp}</p>
+        <p><strong>Consumo anual Fotux:</strong> ${consumoFotux.toFixed(2)} kWh</p>
+        <p><strong>Consumo anual competencia:</strong> ${consumoComp.toFixed(2)} kWh</p>
+        <p><strong>Costo total Fotux:</strong> $${totalFotux.toLocaleString()}</p>
+        <p><strong>Costo total competencia:</strong> $${totalComp.toLocaleString()}</p>
+        <p><strong>Ahorro estimado:</strong> $${ahorro.toLocaleString()}</p>
+        <p><strong>ROI estimado:</strong> ${roi.toFixed(2)} años</p>
       `;
-      document.getElementById('resultado').innerHTML = resultado;
     }
   </script>
 </body>
