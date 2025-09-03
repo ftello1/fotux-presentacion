@@ -1,32 +1,176 @@
-<!-- LOGO -->
-<div class="logo">
-  <img src="imglogo-fotux.png.png" alt="Logo Fotux Chile">
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fotux Chile – Iluminación Industrial de Alta Eficiencia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .logo img {
+      max-width: 220px;
+    }
+    h1, h2 {
+      color: #005a9c;
+      text-align: center;
+    }
+    .intro, .features, .calculator, .cta {
+      margin-bottom: 40px;
+    }
+    .features img {
+      max-width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+    .cta {
+      text-align: center;
+    }
+    .cta a {
+      background-color: #005a9c;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    label {
+      font-weight: bold;
+    }
+    button {
+      background-color: #005a9c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .result {
+      background-color: #e8f4ff;
+      padding: 20px;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="imglogo-fotux.png.png" alt="Logo Fotux Chile">
+    </div>
 
-<!-- PRODUCTO DESTACADO -->
-<div class="features">
-  <h2>🔧 Campana UFO 210 lm/W</h2>
-  <p>Alta eficiencia, bajo mantenimiento, retorno rápido de inversión.</p>
-  <img src="imgHIGH_BAY_HB_GL-210lmFOTUX-1.webp.png" alt="Campana UFO Fotux">
-</div>
+    <!-- TITULO -->
+    <h1>Soluciones de Iluminación Industrial de Alta Eficiencia</h1>
 
-<!-- COMPARATIVA -->
-<div class="features">
-  <h2>📊 Comparativa de Ahorro</h2>
-  <p>Demostramos con datos reales cómo nuestras luminarias superan a la competencia.</p>
-  <img src="impacto_luminarias_fotux.png" alt="Gráfico de eficiencia">
-</div>
+    <!-- INTRO -->
+    <div class="intro">
+      <p>En <strong>Fotux Chile</strong>, lideramos con luminarias de <strong>210 lm/W</strong>, certificadas bajo norma <strong>DS1</strong>. Diseñadas para minería, industria y obras públicas, nuestras soluciones combinan eficiencia energética, cumplimiento normativo y diseño impecable.</p>
+    </div>
 
-<!-- PROYECTOR -->
-<div class="features">
-  <h2>🔦 Proyector LED de Área IP66</h2>
-  <p>Resistente al agua y polvo, óptica profesional, ideal para patios industriales y zonas de carga.</p>
-  <img src="proyector-led-fotux-ip66.png" alt="Proyector LED Fotux">
-</div>
+    <!-- PRODUCTO DESTACADO -->
+    <div class="features">
+      <h2>🔧 Campana UFO 210 lm/W</h2>
+      <p>Alta eficiencia, bajo mantenimiento, retorno rápido de inversión.</p>
+      <img src="imgHIGH_BAY_HB_GL-210lmFOTUX-1.webp.png" alt="Campana UFO Fotux">
+    </div>
 
-<!-- LUMINARIA PÚBLICA -->
-<div class="features">
-  <h2>🚦 Luminaria Pública Fotux DS1</h2>
-  <p>Cumple norma DS1 para espacios exteriores, eficiencia superior, ideal para caminos, accesos y obras públicas.</p>
-  <img src="street-light-fotux-150w.png" alt="Luminaria Pública Fotux">
-</div>
+    <!-- COMPARATIVA -->
+    <div class="features">
+      <h2>📊 Comparativa de Ahorro</h2>
+      <p>Demostramos con datos reales cómo nuestras luminarias superan a la competencia.</p>
+      <img src="impacto_luminarias_fotux.png" alt="Gráfico de eficiencia">
+    </div>
+
+    <!-- PROYECTOR -->
+    <div class="features">
+      <h2>🔦 Proyector LED de Área IP66</h2>
+      <p>Resistente al agua y polvo, óptica profesional, ideal para patios industriales y zonas de carga.</p>
+      <img src="proyector-led-fotux-ip66.png" alt="Proyector LED Fotux">
+    </div>
+
+    <!-- LUMINARIA PÚBLICA -->
+    <div class="features">
+      <h2>🚦 Luminaria Pública Fotux DS1</h2>
+      <p>Cumple norma DS1 para espacios exteriores, eficiencia superior, ideal para caminos, accesos y obras públicas.</p>
+      <img src="street-light-fotux-150w.png" alt="Luminaria Pública Fotux">
+    </div>
+
+    <!-- CALCULADORA -->
+    <div class="calculator">
+      <h2>🧮 Calculadora de Proyecto</h2>
+      <form id="calcForm">
+        <label>Potencia (W):</label><input type="number" id="potencia">
+        <label>Eficiencia (lm/W):</label><input type="number" id="eficiencia">
+        <label>Horas por día:</label><input type="number" id="horas">
+        <label>Días por año:</label><input type="number" id="dias">
+        <label>Costo kWh (CLP):</label><input type="number" id="costoKwh">
+        <label>Vida útil (horas):</label><input type="number" id="vida">
+        <label>Mantenimiento anual (CLP):</label><input type="number" id="mantencion">
+        <label>Cantidad de luminarias:</label><input type="number" id="cantidad">
+        <label>Costo unitario (CLP):</label><input type="number" id="costoUnitario">
+        <button type="button" onclick="calcular()">Comparar</button>
+      </form>
+      <div class="result" id="resultado"></div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="cta">
+      <p>¿Quieres transformar tu proyecto con Fotux?</p>
+      <a href="https://fotux-presentacion.vercel.app" target="_blank">Ver presentación completa</a>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    function calcular() {
+      const potencia = +document.getElementById('potencia').value;
+      const horas = +document.getElementById('horas').value;
+      const dias = +document.getElementById('dias').value;
+      const costoKwh = +document.getElementById('costoKwh').value;
+      const vida = +document.getElementById('vida').value;
+      const mantencion = +document.getElementById('mantencion').value;
+      const cantidad = +document.getElementById('cantidad').value;
+      const costoUnitario = +document.getElementById('costoUnitario').value;
+
+      const consumoAnual = (potencia * horas * dias * cantidad) / 1000;
+      const costoEnergia = consumoAnual * costoKwh;
+      const costoTotal = costoEnergia + mantencion;
+      const inversion = costoUnitario * cantidad;
+
+      const resultado = `
+        <h3>🔎 Resultados</h3>
+        <p><strong>Consumo anual:</strong> ${consumoAnual.toFixed(2)} kWh</p>
+        <p><strong>Costo energético anual:</strong> $${costoEnergia.toLocaleString()}</p>
+        <p><strong>Costo total anual:</strong> $${costoTotal.toLocaleString()}</p>
+        <p><strong>Inversión inicial:</strong> $${inversion.toLocaleString()}</p>
+        <p><strong>ROI estimado:</strong> ${(inversion / costoTotal).toFixed(2)} años</p>
+      `;
+      document.getElementById('resultado').innerHTML = resultado;
+    }
+  </script>
+</body>
+</html>
