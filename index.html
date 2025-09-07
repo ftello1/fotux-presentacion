@@ -2,150 +2,142 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Fotux Chile – Comparativa de Iluminación</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Luminotécnica Fotux</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f4f4f4;
       margin: 0;
       padding: 20px;
+      color: #333;
     }
-    h2 {
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
       color: #005a9c;
     }
     label {
-      font-weight: bold;
       display: block;
-      margin-top: 10px;
+      margin-top: 15px;
+      font-weight: bold;
     }
     input, select {
       width: 100%;
-      padding: 8px;
-      margin-top: 4px;
-      margin-bottom: 10px;
+      padding: 10px;
+      margin-top: 5px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 5px;
     }
     button {
+      margin-top: 20px;
+      padding: 12px 20px;
       background-color: #005a9c;
       color: white;
-      padding: 10px 20px;
       border: none;
-      border-radius: 6px;
+      border-radius: 5px;
       cursor: pointer;
+      font-size: 16px;
     }
-    .result {
-      background-color: #e8f4ff;
+    button:hover {
+      background-color: #004080;
+    }
+    .results {
+      margin-top: 30px;
+      background-color: #e6f2ff;
       padding: 20px;
-      border-radius: 6px;
-      margin-top: 20px;
-    }
-    #imagenLuminaria {
-      text-align: center;
-      margin-top: 20px;
-    }
-    #imagenLuminaria img {
-      max-width: 300px;
       border-radius: 8px;
+    }
+    .dialux-image {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .dialux-image img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
-
-  <div class="calculator">
-    <h2>🧮 Calculadora Comparativa Fotux vs Competencia</h2>
+  <div class="container">
+    <h1>Calculadora Luminotécnica Fotux</h1>
     <form id="calcForm">
-      <label>Lúmenes requeridos totales:</label><input type="number" id="lumenesRequeridos">
+      <label for="nombre">Nombre del Cliente</label>
+      <input type="text" id="nombre" name="nombre" required>
 
-      <label>Selecciona luminaria Fotux:</label>
-      <select id="fotuxSelect" onchange="actualizarImagen()">
-        <option value="fotux-ufo" data-lumen="210" data-potencia="100" data-imagen="campana-ufo-210lmw.png">Campana UFO 210 lm/W</option>
-        <option value="fotux-240w" data-lumen="190" data-potencia="240" data-imagen="campana-industrial-fotux-240w.png">Campana Industrial 240W</option>
+      <label for="area">Área a iluminar (m²)</label>
+      <input type="number" id="area" name="area" required>
+
+      <label for="altura">Altura de montaje (m)</label>
+      <input type="number" id="altura" name="altura" required>
+
+      <label for="potencia">Potencia del equipo (W)</label>
+      <select id="potencia" name="potencia">
+        <option value="100">100W</option>
+        <option value="150">150W</option>
+        <option value="200">200W</option>
+        <option value="240">240W</option>
       </select>
 
-      <label>Selecciona luminaria competencia:</label>
-      <select id="competenciaSelect">
-        <option value="comp-150lmw" data-lumen="150" data-potencia="150">Genérica 150 lm/W</option>
-        <option value="comp-120lmw" data-lumen="120" data-potencia="200">Genérica 120 lm/W</option>
-      </select>
+      <label for="eficiencia">Eficiencia luminosa (lm/W)</label>
+      <input type="number" id="eficiencia" name="eficiencia" value="210" required>
 
-      <label>Horas por día:</label><input type="number" id="horas" value="10">
-      <label>Días por año:</label><input type="number" id="dias" value="300">
-      <label>Costo kWh (CLP):</label><input type="number" id="costoKwh" value="130">
+      <label for="horas">Horas de uso diario</label>
+      <input type="number" id="horas" name="horas" required>
 
-      <label>Costo unitario Fotux (CLP):</label><input type="number" id="costoFotux" value="95000">
-      <label>Costo unitario competencia (CLP):</label><input type="number" id="costoComp" value="75000">
+      <label for="dias">Días de uso al año</label>
+      <input type="number" id="dias" name="dias" required>
 
-      <label>Mantenimiento anual Fotux (CLP):</label><input type="number" id="mantFotux" value="0">
-      <label>Mantenimiento anual competencia (CLP):</label><input type="number" id="mantComp" value="15000">
-
-      <button type="button" onclick="calcular()">Comparar</button>
+      <button type="button" onclick="calcular()">Calcular</button>
     </form>
 
-    <div class="result" id="resultado"></div>
+    <div class="results" id="resultados" style="display:none;">
+      <h2>Resultados</h2>
+      <p><strong>Cliente:</strong> <span id="rNombre"></span></p>
+      <p><strong>Flujo Luminoso Total:</strong> <span id="rFlujo"></span> lúmenes</p>
+      <p><strong>Consumo Anual:</strong> <span id="rConsumo"></span> kWh</p>
+      <p><strong>Recomendación:</strong> <span id="rRecomendacion"></span></p>
+    </div>
 
-    <div id="imagenLuminaria">
-      <img src="campana-ufo-210lmw.png" alt="Luminaria Fotux">
+    <div class="dialux-image">
+      <h3>Visualización Estilo DIALux</h3>
+      <img src="imagenes/dialux_simulacion.jpg" alt="Simulación DIALux">
+    </div>
+
+    <div class="dialux-image">
+      <h3>Imagen del Equipo</h3>
+      <img src="imagenes/campana_ufo_210lmw.jpg" alt="Campana UFO 210 lm/W">
     </div>
   </div>
 
   <script>
-    function actualizarImagen() {
-      const select = document.getElementById('fotuxSelect');
-      const imagen = select.options[select.selectedIndex].getAttribute('data-imagen');
-      document.querySelector('#imagenLuminaria img').src = imagen;
-    }
-
     function calcular() {
-      const lumenesRequeridos = +document.getElementById('lumenesRequeridos').value;
-      const horas = +document.getElementById('horas').value;
-      const dias = +document.getElementById('dias').value;
-      const costoKwh = +document.getElementById('costoKwh').value;
+      const nombre = document.getElementById('nombre').value;
+      const area = parseFloat(document.getElementById('area').value);
+      const altura = parseFloat(document.getElementById('altura').value);
+      const potencia = parseFloat(document.getElementById('potencia').value);
+      const eficiencia = parseFloat(document.getElementById('eficiencia').value);
+      const horas = parseFloat(document.getElementById('horas').value);
+      const dias = parseFloat(document.getElementById('dias').value);
 
-      const fotux = document.getElementById('fotuxSelect').selectedOptions[0];
-      const comp = document.getElementById('competenciaSelect').selectedOptions[0];
+      const flujo = potencia * eficiencia;
+      const consumo = ((potencia * horas * dias) / 1000).toFixed(2);
+      const recomendacion = (flujo / area > 300) ? "Nivel óptimo de iluminación" : "Revisar cantidad de luminarias";
 
-      const lumenFotux = +fotux.getAttribute('data-lumen');
-      const potFotux = +fotux.getAttribute('data-potencia');
-      const imagenFotux = fotux.getAttribute('data-imagen');
+      document.getElementById('rNombre').textContent = nombre;
+      document.getElementById('rFlujo').textContent = flujo + " lm";
+      document.getElementById('rConsumo').textContent = consumo + " kWh";
+      document.getElementById('rRecomendacion').textContent = recomendacion;
 
-      const costoFotux = +document.getElementById('costoFotux').value;
-      const mantFotux = +document.getElementById('mantFotux').value;
-
-      const lumenComp = +comp.getAttribute('data-lumen');
-      const potComp = +comp.getAttribute('data-potencia');
-      const costoComp = +document.getElementById('costoComp').value;
-      const mantComp = +document.getElementById('mantComp').value;
-
-      const cantidadFotux = Math.ceil(lumenesRequeridos / (lumenFotux * potFotux));
-      const cantidadComp = Math.ceil(lumenesRequeridos / (lumenComp * potComp));
-
-      const consumoFotux = (potFotux * horas * dias * cantidadFotux) / 1000;
-      const consumoComp = (potComp * horas * dias * cantidadComp) / 1000;
-
-      const costoEnergiaFotux = consumoFotux * costoKwh;
-      const costoEnergiaComp = consumoComp * costoKwh;
-
-      const totalFotux = (costoFotux * cantidadFotux) + costoEnergiaFotux + mantFotux;
-      const totalComp = (costoComp * cantidadComp) + costoEnergiaComp + mantComp;
-
-      const ahorro = totalComp - totalFotux;
-      const roi = totalFotux / (ahorro || 1);
-
-      document.getElementById('resultado').innerHTML = `
-        <h3>🔎 Resultados</h3>
-        <p><strong>Cantidad luminarias Fotux:</strong> ${cantidadFotux}</p>
-        <p><strong>Cantidad luminarias competencia:</strong> ${cantidadComp}</p>
-        <p><strong>Consumo anual Fotux:</strong> ${consumoFotux.toFixed(2)} kWh</p>
-        <p><strong>Consumo anual competencia:</strong> ${consumoComp.toFixed(2)} kWh</p>
-        <p><strong>Costo total Fotux:</strong> $${totalFotux.toLocaleString()}</p>
-        <p><strong>Costo total competencia:</strong> $${totalComp.toLocaleString()}</p>
-        <p><strong>Ahorro estimado:</strong> $${ahorro.toLocaleString()}</p>
-        <p><strong>ROI estimado:</strong> ${roi.toFixed(2)} años</p>
-      `;
+      document.getElementById('resultados').style.display = 'block';
     }
   </script>
 </body>
 </html>
-
